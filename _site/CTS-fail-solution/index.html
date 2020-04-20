@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>GMS认证问题分析收集 - 生活不止眼前的苟且，还有远方和田野</title>
+
+  <!-- Edit site and author settings in `_config.yml` to make the social details your own -->
+
+    <meta content="生活不止眼前的苟且，还有远方和田野" property="og:site_name">
+  
+    <meta content="GMS认证问题分析收集" property="og:title">
+  
+  
+    <meta content="article" property="og:type">
+  
+  
+    <meta content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+" property="og:description">
+  
+  
+    <meta content="http://localhost:4000/CTS-fail-solution/" property="og:url">
+  
+  
+    <meta content="2018-10-25T00:00:00+08:00" property="article:published_time">
+    <meta content="http://localhost:4000/about/" property="article:author">
+  
+  
+    <meta content="http://localhost:4000/Hursion_Blog/assets/img/hursion_zhang.jpg" property="og:image">
+  
+  
+    
+    <meta content="Android CTS|GTS|STS|VTS" property="article:section">
+    
+  
+  
+    
+  
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@">
+    <meta name="twitter:creator" content="@">
+  
+    <meta name="twitter:title" content="GMS认证问题分析收集">
+  
+  
+    <meta name="twitter:url" content="http://localhost:4000/CTS-fail-solution/">
+  
+  
+    <meta name="twitter:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+">
+  
+  
+    <meta name="twitter:image:src" content="http://localhost:4000/Hursion_Blog/assets/img/hursion_zhang.jpg">
+  
+
+	<meta name="description" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta property="og:image" content="">
+	<link rel="shortcut icon" href="/Hursion_Blog/assets/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="/Hursion_Blog/assets/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/Hursion_Blog/assets/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/Hursion_Blog/assets/img/favicon/apple-touch-icon-144x144.png">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#263959">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#263959">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#263959">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="/Hursion_Blog/assets/fonts/font-awesome/css/font-awesome.min.css">
+	<!-- Styles -->
+	<link rel="stylesheet" href="/Hursion_Blog/assets/css/main.css">
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <aside class="sidebar">
+  <header>
+    <div class="about">
+      <div class="cover-author-image">
+        <a href="/Hursion_Blog/"><img src="/Hursion_Blog/assets/img/hursion_zhang.jpg" alt="Hursion Zhang"></a>
+      </div>
+      <div class="author-name">Hursion Zhang</div>
+      <p>I am a android developer focusing on apps & fw. Always hungry to keep learning.</p>
+    </div>
+  </header> <!-- End Header -->
+  <footer>
+    <section class="contact">
+      <h3 class="contact-title">Contact me</h3>
+      <ul>
+        
+          <li><a href="https://twitter.com/artemsheludko_" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        
+        
+          <li><a href="https://facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+        
+        
+          <li class="github"><a href="http://github.com/hursion" target="_blank"><i class="fa fa-github"></i></a></li>
+        
+        
+          <li class="linkedin"><a href="https://in.linkedin.com/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+        
+        
+          <li class="email"><a href="mailto:zhanghursion@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+        
+      </ul>
+    </section> <!-- End Section Contact -->
+    <div class="copyright">
+      <p>2020 &copy; Hursion Zhang</p>
+    </div>
+  </footer> <!-- End Footer -->
+</aside> <!-- End Sidebar -->
+<div class="content-box clearfix">
+  <article class="article-page">
+  <div class="page-content">
+    
+    
+    <div class="wrap-content">
+      <header class="header-page">
+        <h1 class="page-title">GMS认证问题分析收集</h1>
+        <div class="page-date"><span>2018, Oct 25&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+      </header>
+      <table>
+  <thead>
+    <tr>
+      <th>Author</th>
+      <th>Hursion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Email</td>
+      <td>private now</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="目录">目录</h1>
+<ul>
+  <li><a href="#CTS篇">CTS篇</a></li>
+  <li><a href="#GTS篇">GTS篇</a></li>
+  <li><a href="#VTS篇">VTS篇</a></li>
+</ul>
+
+<h2 id="cts篇">CTS篇</h2>
+
+<p><strong>1.android.media.cts.MediaPlayerDrmTest#testCAR_CLEARKEY_AUDIO_DOWNLOADED_V0_SYNC	
+和android.media.cts.RingtoneManagerTest#testAccessMethods fail</strong></p>
+
+<p>root cause： 
+测试项会往sd卡下载mp4文件，因客户persist.storage.type属性修改默认sd卡存储，导致无法正常写入，下载测试资源失败</p>
+
+<p>solution： 
+还原persist.storage.type属性</p>
+
+<p>key log：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>testCAR_CLEARKEY_AUDIO_DOWNLOADED_V0_SYNC报的是java.lang.NullPointerException: uri param can not be null.
+testAccessMethods 报的是java.lang.NullPointerException: Attempt to invoke virtual method 'boolean java.lang.String.equals(java.lang.Object)' on a null object reference
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I MediaPlayerDrmTestBase: Downloading file:file:///storage/D465-1BEB/Download/car_cenc-20120827-8c.mp4
+I MediaDownloadManager: uri:http://storage.googleapis.com/wvmedia/cenc/clearkey/car_cenc-20120827-8c-pssh.mp4file:file:///storage/D465-1BEB/Download/car_cenc-20120827-8c.mp4 wait:600 Secs
+W DownloadManager: Path appears to be invalid: /storage/D465-1BEB/Download/car_cenc-20120827-8c.mp4
+E DownloadManager: [6] Failed: java.lang.IllegalArgumentException: Invalid UUID string: D465-1BEB
+E DownloadManager: java.lang.IllegalArgumentException: Invalid UUID string: D465-1BEB
+I MediaPlayerDrmTestBase: Downloaded file:file:///storage/D465-1BEB/Download/car_cenc-20120827-8c.mp4 id:6 uri:null
+</code></pre></div></div>
+<p><strong>2.CTS 7.0_r24 android.dpi.cts.ConfigurationScreenLayoutTest#testScreenLayout fail</strong></p>
+
+<p>root cause：
+testScreenLayout()要求四个方向旋转时都要返回相同的Configuration，因为客户机器的wm size为：720×1440，并且只修改了竖屏状态下的nav高度（”navigation_bar_height”），导致横竖屏report不一致。</p>
+
+<p>solution： 
+修改横屏状态的nav高度（”navigation_bar_width”）和竖屏相等</p>
+
+<p>key log：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>junit.framework.AssertionFailedError: Expected screen long value of 16 but got 32 for orientation 1 expected:&lt;16&gt; but was:&lt;32&gt;
+at junit.framework.Assert.fail(Assert.java:50)
+at junit.framework.Assert.failNotEquals(Assert.java:287)
+at junit.framework.Assert.assertEquals(Assert.java:67)
+at junit.framework.Assert.assertEquals(Assert.java:199)
+at android.dpi.cts.ConfigurationScreenLayoutTest.testScreenLayout(ConfigurationScreenLayoutTest.java:58)
+</code></pre></div></div>
+<p><strong>3. com.android.cts.devicepolicy.MixedDeviceOwnerTest#testAudioRestriction fail和com.android.cts.devicepolicy.MixedProfileOwnerTest#testAudioRestriction  fail</strong>
+root cause: 
+未设置默认铃声</p>
+
+<p>solution： 
+设置默认铃声</p>
+
+<p>key log：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>10-15 21:05:11.860 22257 22276 W MediaPlayer: Couldn't open content://0@settings/system/ringtone_cachesprd_ringtone: java.io.FileNotFoundException: Direct file access no longer supported; ringtone playback is available through android.media.Ringtone
+10-15 21:05:11.861 22257 22276 W MediaPlayer: Couldn't open null: java.lang.NullPointerException: uri
+10-15 21:05:11.883   415   631 E f: Couldn't open fd for content://settings/system/ringtone
+10-15 21:05:11.883 22257 22276 E MediaPlayerNative: Unable to create media player
+...
+10-15 21:05:11.909 22257 22276 I TestRunner: ----- begin exception -----
+10-15 21:05:11.910 22257 22276 I TestRunner: java.io.IOException: setDataSource failed.: status=0x80000000
+10-15 21:05:11.910 22257 22276 I TestRunner: 	at android.media.MediaPlayer.nativeSetDataSource(Native Method)
+</code></pre></div></div>
+
+<p>CTS代码：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public void testDisallowAdjustVolume() throws Exception {
+...
+            mAudioManager.setStreamVolume(AudioManager.STREAM_RING, 1, /* flag= */ 0);
+</code></pre></div></div>
+<p><strong>4.android.security.cts.StagefrightTest#testStagefright_bug_68953854 ——fail</strong>
+root cause：
+未合入google安全patch</p>
+
+<p>solution：
+合入google安全patch</p>
+
+<p>key log：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>10-24 12:50:45 I/ConsoleReporter: [1/1 armeabi-v7a CtsSecurityTestCases S5319A6xxxxx1] android.security.cts.StagefrightTest#testStagefright_bug_68953854 fail: junit.framework.AssertionFailedError: operation not completed within timeout of 60000ms
+at junit.framework.Assert.fail(Assert.java:50)
+at android.security.cts.StagefrightTest.runWithTimeout(StagefrightTest.java:962)
+</code></pre></div></div>
+<p>ps：
+如何检查是否合入对应patch，首先确认fail的bug id，如此例中id为68953854，然后去google<a href="https://source.android.com/security/bulletin">安全公告网站</a>搜索以上bug,然后根据参考内容找到patch，和问题代码做比较即可确认。</p>
+
+<p>**5.android.jobscheduler.cts.TimingConstraintsTest#testJobParameters_unexpiredDeadline
+**
+root cause:
+和wifi翻墙有关</p>
+
+<p>solution:</p>
+
+<p>建议可否较少人用vpn重新测试.
+如果还是测试不过，请申请到sprd的实验室测试测试，以排除网路问题</p>
+
+<p>key log:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>10-11 15:06:05.804  1240  1240 I Finsky  : [2] com.google.android.finsky.scheduler.JobSchedulerEngine$PhoneskyJobSchedulerJobService.onStartJob(7): onJobSchedulerWakeup with jobId 9002
+10-11 15:06:06.062   557  1898 I JobScheduler.Conn: Connectivity CHANGED for JobStatus{807ddbb #u0a33/9000 com.android.vending/com.google.android.finsky.scheduler.JobSchedulerEngine$PhoneskyJobSchedulerJobService u=0 s=10033 TIME=+16h58m50s422ms:+1d16h58m50s422ms NET=1 WAIT:APP_NOT_IDLE WAIT:DEV_NOT_DOZING}: usable=true connected=true validated=true metered=false unmetered=true notRoaming=true
+10-11 15:06:06.065   557  1898 I JobScheduler.Conn: Connectivity CHANGED for JobStatus{a8a92d8 #u0a33/9001 com.android.vending/com.google.android.finsky.scheduler.JobSchedulerEngine$PhoneskyJobSchedulerJobService u=0 s=10033 TIME=+30s0ms:+22h52m19s684ms NET=2 CHARGING IDLE WAIT:APP_NOT_IDLE WAIT:DEV_NOT_DOZING}: usable=true connected=true validated=true metered=false unmetered=true notRoaming=true
+10-11 15:06:19.122  4712  4730 I TestRunner: failed: testJobParameters_unexpiredDeadline(android.jobscheduler.cts.TimingConstraintsTest)
+10-11 15:06:19.123  4712  4730 I TestRunner: ----- begin exception -----
+10-11 15:06:19.124  4712  4730 I TestRunner: junit.framework.AssertionFailedError: Failed to execute non-deadline job
+10-11 15:06:19.124  4712  4730 I TestRunner: 	at junit.framework.Assert.fail(Assert.java:50)
+10-11 15:06:19.124  4712  4730 I TestRunner: 	at junit.framework.Assert.assertTrue(Assert.java:20)
+10-11 15:06:19.124  4712  4730 I TestRunner: 	at android.jobscheduler.cts.TimingConstraintsTest.testJobParameters_unexpiredDeadline(TimingConstraintsTest.java:93)
+10-11 15:06:19.124  4712  4730 I TestRunner: 	at java.lang.reflect.Method.invoke(Native Method)
+</code></pre></div></div>
+
+<h2 id="gts篇">GTS篇</h2>
+
+<p><strong>1. com.google.android.pm.gts.PackageManagerHostTest#testMediaProjection fail</strong>
+root cause:
+Instant App should be able to access Media Projection APIs</p>
+
+<p>solution: 
+合入以下google patch
+<a href="https://android-review.googlesource.com/c/platform/frameworks/base/+/732269">https://android-review.googlesource.com/c/platform/frameworks/base/+/732269</a></p>
+
+<p>key log:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>10-24 18:04:00 I/ModuleListener: [1/1] com.google.android.pm.gts.PackageManagerHostTest#testMediaProjection fail:
+junit.framework.AssertionFailedError: Instant App should be able to access Media Projection APIs.
+Please apply patch r.android.com/732269
+	at junit.framework.Assert.fail(Assert.java:57)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.TestCase.assertTrue(TestCase.java:192)
+	at com.google.android.pm.gts.PackageManagerHostTest.testMediaProjection(PackageManagerHostTest.java:286)
+</code></pre></div></div>
+
+<p><strong>2.GtsMemoryHostTestCases - com.google.android.memory.gts.AllAppsMemoryHostTest#testPeakPssOfAllApps fail</strong></p>
+
+<p>root cause：
+此测项主要会启动项目内置的各个app, 并计算memory 的使用量, app 使用的memory 量不符规范即fail.
+如单测此项发现fail, 建议多测数次确定fail 的原因皆相同.</p>
+
+<p>常见的fail 有以下</p>
+
+<ol>
+  <li>某app memory 使用量超过规范导致fail.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>D/ModuleListener: ModuleListener.testFailed(com.google.android.memory.gts.AllAppsMemoryHostTest#testPeakPssOfAllApps, java.lang.AssertionError: com.aa.bbb/.MainActivity 99548, failed to keep to the max pss of 76800
+</code></pre></div>    </div>
+  </li>
+  <li>每次执行此测项总是在启动某app 后出现断开现象.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>D/ModuleListener: ModuleListener.testFailed(com.google.android.memory.gts.AllAppsMemoryHostTest#testPeakPssOfAllApps, com.android.tradefed.device.DeviceUnresponsiveException: Attempted shell am start -W -S 'com.aa.bbb/.MainActivity' multiple times on device 0180531144859 without communication success. Aborting.
+</code></pre></div>    </div>
+  </li>
+  <li>每次执行此测项启动某app 总是失败.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>D/ModuleListener: ModuleListener.testFailed(com.google.android.memory.gts.AllAppsMemoryHostTest#testPeakPssOfAllApps, java.lang.AssertionError: com.aa.bbb/.MainActivity failed to start
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p>上述情形如果是第三方app 导致, 可以先将第三方app 取消内置再进行单测以确定是否为第三方app 问题.
+如果确定为第三方app 问题则需由第三方修改或是协调取消内置.
+如果是平台app 可提交请相关模块协助.</p>
+
+<p>ps:
+关于检查启动某app的memory状态判断，可由以下命令手动模拟获取</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>输入
+adb shell am start -n com.clarodrive.android/com.owncloud.android.ui.splash.SplashActivity
+
+启动后输入
+adb shell dumpsys -t 30 meminfo --package com.clarodrive.android
+
+检测反馈结果 TOTAL 的memory 量.
+</code></pre></div></div>
+<p>举个例子，可以看出如下TOTAL的memory为99415</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ am start -n com.clarodrive.android/com.owncloud.android.ui.splash.SplashActivity
+clarodrive.android/com.owncloud.android.ui.splash.SplashActivity              &lt;
+Starting: Intent { cmp=com.clarodrive.android/com.owncloud.android.ui.splash.SplashActivity }
+$ dumpsys -t 30 meminfo --package com.clarodrive.android
+dumpsys -t 30 meminfo --package com.clarodrive.android
+Applications Memory Usage (in Kilobytes):
+Uptime: 5932737 Realtime: 15671620
+** MEMINFO in pid 12706 [com.clarodrive.android] **
+                   Pss  Private  Private  SwapPss     Heap     Heap     Heap
+                 Total    Dirty    Clean    Dirty     Size    Alloc     Free
+                ------   ------   ------   ------   ------   ------   ------
+  Native Heap    13199    13052        0        0    19968    14463     5504
+  Dalvik Heap     2798     2552      200       25     3481     2611      870
+ Dalvik Other     1501     1500        0        1
+        Stack       40       40        0        0
+       Ashmem     7222     7064        0        0
+    Other dev       23        0       20        0
+     .so mmap     3310      160      940       47
+    .apk mmap    38500      104    36284        0
+    .ttf mmap      537        0      188        0
+    .dex mmap    20129       16    18508        0
+    .oat mmap     2465        0      504        0
+    .art mmap     1218      708      176        1
+   Other mmap     2275        4     2060        0
+      Unknown     5412     5284      120      712
+        TOTAL    99415    30484    59000      786    23449    17074     6374
+ App Summary
+                       Pss(KB)
+                        ------
+           Java Heap:     3436
+         Native Heap:    13052
+                Code:    56704
+               Stack:       40
+            Graphics:        0
+       Private Other:    16252
+              System:     9931
+               TOTAL:    99415       TOTAL SWAP PSS:      786
+ Objects
+               Views:       19         ViewRootImpl:        2
+         AppContexts:       11           Activities:        2
+              Assets:        6        AssetManagers:        6
+       Local Binders:       51        Proxy Binders:       48
+       Parcel memory:       23         Parcel count:       92
+    Death Recipients:        2      OpenSSL Sockets:        1
+            WebViews:        1
+ SQL
+         MEMORY_USED:      109
+  PAGECACHE_OVERFLOW:       66          MALLOC_SIZE:      117
+ DATABASES
+      pgsz     dbsz   Lookaside(b)          cache  Dbname
+         4       16                        6/31/5  /data/user/0/com.clarodrive.android/databases/evernote_jobs.db
+         4       24                       16/39/9  /data/user/0/com.clarodrive.android/databases/crash_reports
+</code></pre></div></div>
+
+<h2 id="vts篇">VTS篇</h2>
+
+<h2 id="sts篇">STS篇</h2>
+
+<h2 id="豁免项">豁免项</h2>
+
+<p><a href="http://eip.unisoc.com/sites/pld/_layouts/15/WopiFrame2.aspx?sourcedoc=/sites/pld/CTSGoogle/CTS_google%E5%92%A8%E8%AF%A2%E9%97%AE%E9%A2%98%E5%88%97%E8%A1%A8.xlsx&amp;action=default">unisoc 咨询问题列表</a></p>
+
+<p><a href="https://android-review.googlesource.com/q/project:platform/cts">google git-TR check</a></p>
+
+<h2 id="其他帮助">其他帮助</h2>
+<p><a href="https://docs.google.com/document/d/1HNf9dpDLrd82u6PabvrfFmpjmOlaysK1P2YoiFXjmEo/view#">CTSv2 最佳做法</a></p>
+
+
+      <div class="page-footer">
+        <div class="page-share">
+          <a href="https://twitter.com/intent/tweet?text=GMS认证问题分析收集&url=http://localhost:4000/CTS-fail-solution/" title="Share on Twitter" rel="nofollow" target="_blank">Twitter</a>
+          <a href="https://facebook.com/sharer.php?u=http://localhost:4000/CTS-fail-solution/" title="Share on Facebook" rel="nofollow" target="_blank">Facebook</a>
+          <a href="https://plus.google.com/share?url=http://localhost:4000/CTS-fail-solution/" title="Share on Google+" rel="nofollow" target="_blank">Google+</a>
+        </div>
+        <div class="page-tag">
+          
+        </div>
+      </div>
+      <section class="comment-area">
+  <div class="comment-wrapper">
+    
+    <div id="disqus_thread" class="article-comments"></div>
+    <script>
+      (function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//mr-zhang.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+  </div>
+</section> <!-- End Comment Area -->
+
+    </div> <!-- End Wrap Content -->
+  </div> <!-- End Page Content -->
+</article> <!-- End Article Page -->
+
+</div>
+
+  </div>
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+</script> <!-- End Analytics -->
+
+</body>
+</html>

@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>CTS测试框架整理_V2 - 生活不止眼前的苟且，还有远方和田野</title>
+
+  <!-- Edit site and author settings in `_config.yml` to make the social details your own -->
+
+    <meta content="生活不止眼前的苟且，还有远方和田野" property="og:site_name">
+  
+    <meta content="CTS测试框架整理_V2" property="og:title">
+  
+  
+    <meta content="article" property="og:type">
+  
+  
+    <meta content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+" property="og:description">
+  
+  
+    <meta content="http://localhost:4000/CTS%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6%E6%95%B4%E7%90%86_V2/" property="og:url">
+  
+  
+    <meta content="2018-10-24T00:00:00+08:00" property="article:published_time">
+    <meta content="http://localhost:4000/about/" property="article:author">
+  
+  
+    <meta content="http://localhost:4000/Hursion_Blog/assets/img/hursion_zhang.jpg" property="og:image">
+  
+  
+    
+    <meta content="Android" property="article:section">
+    
+  
+  
+    
+  
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@">
+    <meta name="twitter:creator" content="@">
+  
+    <meta name="twitter:title" content="CTS测试框架整理_V2">
+  
+  
+    <meta name="twitter:url" content="http://localhost:4000/CTS%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6%E6%95%B4%E7%90%86_V2/">
+  
+  
+    <meta name="twitter:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+">
+  
+  
+    <meta name="twitter:image:src" content="http://localhost:4000/Hursion_Blog/assets/img/hursion_zhang.jpg">
+  
+
+	<meta name="description" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta property="og:image" content="">
+	<link rel="shortcut icon" href="/Hursion_Blog/assets/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="/Hursion_Blog/assets/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/Hursion_Blog/assets/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/Hursion_Blog/assets/img/favicon/apple-touch-icon-144x144.png">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#263959">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#263959">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#263959">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="/Hursion_Blog/assets/fonts/font-awesome/css/font-awesome.min.css">
+	<!-- Styles -->
+	<link rel="stylesheet" href="/Hursion_Blog/assets/css/main.css">
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <aside class="sidebar">
+  <header>
+    <div class="about">
+      <div class="cover-author-image">
+        <a href="/Hursion_Blog/"><img src="/Hursion_Blog/assets/img/hursion_zhang.jpg" alt="Hursion Zhang"></a>
+      </div>
+      <div class="author-name">Hursion Zhang</div>
+      <p>I am a android developer focusing on apps & fw. Always hungry to keep learning.</p>
+    </div>
+  </header> <!-- End Header -->
+  <footer>
+    <section class="contact">
+      <h3 class="contact-title">Contact me</h3>
+      <ul>
+        
+          <li><a href="https://twitter.com/artemsheludko_" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        
+        
+          <li><a href="https://facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+        
+        
+          <li class="github"><a href="http://github.com/hursion" target="_blank"><i class="fa fa-github"></i></a></li>
+        
+        
+          <li class="linkedin"><a href="https://in.linkedin.com/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+        
+        
+          <li class="email"><a href="mailto:zhanghursion@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+        
+      </ul>
+    </section> <!-- End Section Contact -->
+    <div class="copyright">
+      <p>2020 &copy; Hursion Zhang</p>
+    </div>
+  </footer> <!-- End Footer -->
+</aside> <!-- End Sidebar -->
+<div class="content-box clearfix">
+  <article class="article-page">
+  <div class="page-content">
+    
+    
+    <div class="wrap-content">
+      <header class="header-page">
+        <h1 class="page-title">CTS测试框架整理_V2</h1>
+        <div class="page-date"><span>2018, Oct 24&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+      </header>
+      <h1 id="cts测试框架整理_v2">CTS测试框架整理_V2</h1>
+<p>cts-tradefed框架时基于基础框架tradefederation（tools/tradefederation/）的二次封装，对于tradefederation感兴趣的可以去查阅https://source.android.com/devices/tech/test_infra/tradefed</p>
+
+<p>android-cts-8.1_r8-linux_x86-x86为例,我们运行cts测试时，首先启动脚本cts-tradefed，这个脚本在源码中的位置：cts/tools/cts-tradefed/etc,编译后会copy到out/host/linux-x86/bin；
+脚本中最核心的一句话就是启动TF窗口
+<code class="highlighter-rouge">
+java $RDBG_FLAG -Xmx4g -XX:+HeapDumpOnOutOfMemoryError -cp ${JAR_PATH} -DCTS_ROOT=${CTS_ROOT} com.android.compatibility.common.tradefed.command.CompatibilityConsole "$@"
+</code></p>
+<h2 id="入口compatibilityconsole">入口CompatibilityConsole</h2>
+<p>代码位置：/cts/common/host-side/tradefed/src/com/android/compatibility/common/tradefed/</p>
+
+<p>CompatibilityConsole是基础框架中Console的子类，主要是添加了自定义Command，setCustomCommands这个方法中添加了V2框架支持自己支持的命令，可以看到在自定义的命令中多了一些关于module的命令，这个module非常重要，是整个V2框架的重心，在V2框架的测试case执行中，淡化了plan的概念，强调了这个module的概念，一个module就代表一组测试case，简单的理解，对于以apk为单位测试的case，一个apk就是一个module。 
+举个例子：其中的listModules</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>private void listModules() {
+    File[] files = null;
+    try {
+        // 获取测试目录
+        // 这个ModuleRepo.ConfigFilter主要作用就是获取所有config结尾的文件
+        files = getBuildHelper().getTestsDir().listFiles(new ModuleRepo.ConfigFilter());
+    } catch (FileNotFoundException e) {
+        printLine(e.getMessage());
+        e.printStackTrace();
+    }
+    if (files != null &amp;&amp; files.length &gt; 0) {
+        List&lt;String&gt; modules = new ArrayList&lt;&gt;();
+        for (File moduleFile : files) {
+            // 遍历目录下的所有文件
+            // 把config结尾的文件的文件名列出来
+            modules.add(FileUtil.getBaseName(moduleFile.getName()));
+        }
+        Collections.sort(modules);
+        for (String module : modules) {
+            printLine(module);
+        }
+    } else {
+        printLine("No modules found");
+    }
+}
+</code></pre></div></div>
+<p>这个地方ModuleRepo是一个重点，测试case的组织全靠这个repo。</p>
+
+<p>如果运行过CTS测试case的话，会知道在测试运行的时候控制台上命令提示符前面会有cts-tf的提示，之前的版本是写死在代码中的，而这里就不一样了：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@Override
+protected String getConsolePrompt() {
+    return String.format("%s-tf &gt; ", SuiteInfo.NAME.toLowerCase());
+}
+</code></pre></div></div>
+<p>其中的SuiteInfo并不是某一个固定的java文件，而是动态编译生成的：</p>
+
+<p>代码位置：/cts/build/compatibility_test_suite.mk</p>
+
+<p>这个mk文件定义了SuiteInfo文件的生成：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Generate the SuiteInfo.java
+suite_info_java := $(call intermediates-dir-for,JAVA_LIBRARIES,$(LOCAL_MODULE),true,COMMON)/com/android/compatibility/SuiteInfo.java
+$(suite_info_java): PRIVATE_SUITE_BUILD_NUMBER := $(LOCAL_SUITE_BUILD_NUMBER)
+$(suite_info_java): PRIVATE_SUITE_TARGET_ARCH := $(LOCAL_SUITE_TARGET_ARCH)
+$(suite_info_java): PRIVATE_SUITE_NAME := $(LOCAL_SUITE_NAME)
+$(suite_info_java): PRIVATE_SUITE_FULLNAME := $(LOCAL_SUITE_FULLNAME)
+$(suite_info_java): PRIVATE_SUITE_VERSION := $(LOCAL_SUITE_VERSION)
+$(suite_info_java): cts/build/compatibility_test_suite.mk $(LOCAL_MODULE_MAKEFILE)
+    @echo Generating: $@
+    $(hide) mkdir -p $(dir $@)
+    $(hide) echo "/* This file is auto generated by Android.mk.  Do not modify. */" &gt; $@
+    $(hide) echo "package com.android.compatibility;" &gt;&gt; $@
+    $(hide) echo "public class SuiteInfo {" &gt;&gt; $@
+    $(hide) echo "    public static final String BUILD_NUMBER = \"$(PRIVATE_SUITE_BUILD_NUMBER)\";" &gt;&gt; $@
+    $(hide) echo "    public static final String TARGET_ARCH = \"$(PRIVATE_SUITE_TARGET_ARCH)\";" &gt;&gt; $@
+    $(hide) echo "    public static final String NAME = \"$(PRIVATE_SUITE_NAME)\";" &gt;&gt; $@
+    $(hide) echo "    public static final String FULLNAME = \"$(PRIVATE_SUITE_FULLNAME)\";" &gt;&gt; $@
+    $(hide) echo "    public static final String VERSION = \"$(PRIVATE_SUITE_VERSION)\";" &gt;&gt; $@
+    $(hide) echo "}" &gt;&gt; $@
+# Include the SuiteInfo.java
+LOCAL_GENERATED_SOURCES := $(suite_info_java)
+</code></pre></div></div>
+<p>这个文件重点就是生成了一些常量，而这些常量也正是在mk文件中定义的：比如我们上面说的SuiteInfo.NAME，生成过程：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public static final String NAME = \"$(PRIVATE_SUITE_NAME)\";" &gt;&gt; $@
+$(suite_info_java): PRIVATE_SUITE_NAME := $(LOCAL_SUITE_NAME)
+</code></pre></div></div>
+<p>LOCAL_SUITE_NAME的定义：</p>
+
+<p>/cts/tools/cts-tradefed/Android.mk</p>
+
+<p>其中有一行LOCAL_SUITE_NAME := CTS 
+上面的文件中还有一些其他常量的定义。 
+虽然这个只是一个名称的定义，但是意义在于整个V2版本的框架的灵活程度变的更高了，尽可能的把更多的内容放在mk文件中定义，避免hard code。 
+入口这个文件还是比较简单，就是作为整个框架的启动入口，自定义命令的添加。</p>
+
+<h2 id="modulerepo">ModuleRepo</h2>
+<p>在V2版本的框架中淡化的plan的概念，取而代之是module，开始之前我们先看下这个module的config文件究竟长什么样，跟V1版本的有什么区别,依旧是CtsJobSchedulerTestCases：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;configuration description="Config for CTS Job Scheduler test cases"&gt;
+    &lt;option name="config-descriptor:metadata" key="component" value="framework" /&gt;
+    &lt;target_preparer class="com.android.tradefed.targetprep.suite.SuiteApkInstaller"&gt;
+        &lt;option name="cleanup-apks" value="true" /&gt;
+        &lt;option name="test-file-name" value="CtsJobSchedulerTestCases.apk" /&gt;
+        &lt;option name="test-file-name" value="CtsJobSchedulerJobPerm.apk" /&gt;
+    &lt;/target_preparer&gt;
+    &lt;test class="com.android.tradefed.testtype.AndroidJUnitTest" &gt;
+        &lt;option name="package" value="android.jobscheduler.cts" /&gt;
+        &lt;option name="runtime-hint" value="2m" /&gt;
+    &lt;/test&gt;
+&lt;/configuration&gt;
+</code></pre></div></div>
+<p>可以看到，没有了之前每条测试都配置一个xml中的一个标签，取而代之的是这个module相关的一些配置。 
+通过这个ModuleRepo，在初始化的时候扫描测试目录下所有的config文件</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>private void addModuleDef(String name, IAbi abi, IRemoteTest test,
+        String[] configPaths) throws ConfigurationException {
+    // Invokes parser to process the test module config file
+    IConfiguration config = mConfigFactory.createConfigurationFromArgs(configPaths);
+    addModuleDef(new ModuleDef(name, abi, test, config.getTargetPreparers(),
+            config.getConfigurationDescription()));
+}
+</code></pre></div></div>
+<p>每个config文件代表了一个module，把所有的config文件解析之后放入list。</p>
+
+<h3 id="组件compatibilitytest">组件CompatibilityTest</h3>
+<p>老套路，还是先看下这个V2框架的组件配置文件：</p>
+
+<p>代码位置 
+platform/cts/common/host-side/tradefed/res/config/ 
+platform/cts/tools/cts-tradefed/res/config</p>
+
+<p>配置文件比较多，这个地方就不贴代码了，但是核心没有变，组件的配置在/cts/common/host-side/tradefed/res/config/common-compatibility-config.xml中，有一个test组件的配置</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;test class="com.android.compatibility.common.tradefed.testtype.CompatibilityTest" /&gt;
+</code></pre></div></div>
+<p>，可见V2框架的test组件就是这个CompatibilityTest，直奔其run方法：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public void run(ITestInvocationListener listener) throws DeviceNotAvailableException {
+    try {
+        List&lt;ISystemStatusChecker&gt; checkers = new ArrayList&lt;&gt;();
+        // 系统状态检查
+        if (mSkipAllSystemStatusCheck) {
+            CLog.d("Skipping system status checkers");
+        } else {
+            checkSystemStatusBlackAndWhiteList();
+            for (ISystemStatusChecker checker : mListCheckers) {
+                if(shouldIncludeSystemStatusChecker(checker)) {
+                    checkers.add(checker);
+                }
+            }
+        }
+        LinkedList&lt;IModuleDef&gt; modules;
+        synchronized (mModuleRepo) {
+            if (!mModuleRepo.isInitialized()) {
+                // 这步很重要，初始化了filter
+                // 一个代表要删除掉的module，一个代表要添加的额外module
+                setupFilters();
+                // ModuleRepo的初始化，已经添加了所有的测试case
+                mModuleRepo.initialize(mTotalShards, mShardIndex, mBuildHelper.getTestsDir(),
+                        getAbis(), mDeviceTokens, mTestArgs, mModuleArgs, mIncludeFilters,
+                        mExcludeFilters,
+                        mModuleMetadataIncludeFilter, mModuleMetadataExcludeFilter,
+                        mBuildHelper.getBuildInfo());
+                // Add the entire list of modules to the CompatibilityBuildHelper for reporting
+                mBuildHelper.setModuleIds(mModuleRepo.getModuleIds());
+                int count = UniqueModuleCountUtil.countUniqueModules(
+                        mModuleRepo.getTokenModules()) +
+                        UniqueModuleCountUtil.countUniqueModules(
+                                mModuleRepo.getNonTokenModules());
+                CLog.logAndDisplay(LogLevel.INFO, "========================================");
+                CLog.logAndDisplay(LogLevel.INFO, "Starting a run with %s unique modules.",
+                        count);
+                CLog.logAndDisplay(LogLevel.INFO, "========================================");
+            } else {
+                CLog.d("ModuleRepo already initialized.");
+            }
+            // 获取本次测试要跑的module的集合
+            modules = mModuleRepo.getModules(getDevice().getSerialNumber(), mShardIndex);
+        }
+        // clearFilter，就是前面提到的一个代表要删除掉的module，一个代表要添加的额外module
+        mExcludeFilters.clear();
+        mIncludeFilters.clear();
+        if (mRetrySessionId != null) {
+            loadRetryCommandLineArgs(mRetrySessionId);
+        }
+        listener = new FailureListener(listener, getDevice(), mBugReportOnFailure,
+                mLogcatOnFailure, mScreenshotOnFailure, mRebootOnFailure, mMaxLogcatBytes);
+        int moduleCount = modules.size();
+        if (moduleCount == 0) {
+            if (sPreparedLatch != null) {
+                sPreparedLatch.countDown();
+            }
+            return;
+        } else {
+            int uniqueModuleCount = UniqueModuleCountUtil.countUniqueModules(modules);
+        }
+        if (mRebootBeforeTest) {
+            mDevice.reboot();
+        }
+        if (mSkipConnectivityCheck) {
+            String clazz = NetworkConnectivityChecker.class.getCanonicalName();
+            mSystemStatusCheckBlacklist.add(clazz);
+        }
+        boolean isPrepared = true;
+        for (int i = 0; i &lt; moduleCount; i++) {
+            IModuleDef module = modules.get(i);
+            module.setBuild(mBuildHelper.getBuildInfo());
+            module.setDevice(mDevice);
+            module.setPreparerWhitelist(mPreparerWhitelist);
+            // 开始对每个module设置组件以及device
+            if (mCollectTestsOnly != null) {
+                module.setCollectTestsOnly(mCollectTestsOnly);
+            }
+            isPrepared &amp;= (module.prepare(mSkipPreconditions, mPreconditionArgs));
+        }
+        if (!isPrepared) {
+            throw new RuntimeException(String.format("Failed preconditions on %s",
+                    mDevice.getSerialNumber()));
+        }
+        if (mIsLocalSharding) {
+            try {
+                sPreparedLatch.countDown();
+                int attempt = 1;
+                while(!sPreparedLatch.await(MINUTES_PER_PREP_ATTEMPT, TimeUnit.MINUTES)) {
+                    if (attempt &gt; NUM_PREP_ATTEMPTS ||
+                            InvocationFailureHandler.hasFailed(mBuildHelper)) {
+                        CLog.logAndDisplay(LogLevel.ERROR,
+                                "Incorrect preparation detected, exiting test run from %s",
+                                mDevice.getSerialNumber());
+                        return;
+                    }
+                    CLog.logAndDisplay(LogLevel.WARN, "waiting on preconditions");
+                    attempt++;
+                }
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        mModuleRepo.tearDown();
+        mModuleRepo = null;
+        // 开始执行测试
+        while (!modules.isEmpty()) {
+            IModuleDef module = modules.poll();
+            long start = System.currentTimeMillis();
+            if (mRebootPerModule) {
+                if ("user".equals(mDevice.getProperty("ro.build.type"))) {
+                    CLog.e("reboot-per-module should only be used during development, "
+                        + "this is a\" user\" build device");
+                } else {
+                    mDevice.reboot();
+                }
+            }
+            // 运行测试检查
+            if (checkers != null &amp;&amp; !checkers.isEmpty()) {
+                runPreModuleCheck(module.getName(), checkers, mDevice, listener);
+            }
+            IInvocationContext moduleContext = new InvocationContext();
+            moduleContext.setConfigurationDescriptor(module.getConfigurationDescriptor());
+            moduleContext.addInvocationAttribute(IModuleDef.MODULE_NAME, module.getName());
+            moduleContext.addInvocationAttribute(IModuleDef.MODULE_ABI,
+                    module.getAbi().getName());
+            mInvocationContext.setModuleInvocationContext(moduleContext);
+            try {
+                // 执行module
+                module.run(listener);
+            } catch (DeviceUnresponsiveException due) {
+                // being able to catch a DeviceUnresponsiveException here implies that recovery
+                // was successful, and test execution should proceed to next module
+                ByteArrayOutputStream stack = new ByteArrayOutputStream();
+                due.printStackTrace(new PrintWriter(stack, true));
+                StreamUtil.close(stack);
+            } finally {
+                mInvocationContext.setModuleInvocationContext(null);
+            }
+            long duration = System.currentTimeMillis() - start;
+            long expected = module.getRuntimeHint();
+            long delta = Math.abs(duration - expected);
+            // Show warning if delta is more than 10% of expected
+            if (expected &gt; 0 &amp;&amp; ((float)delta / (float)expected) &gt; 0.1f) {
+                CLog.logAndDisplay(LogLevel.WARN,
+                        "Inaccurate runtime hint for %s, expected %s was %s",
+                        module.getId(),
+                        TimeUtil.formatElapsedTime(expected),
+                        TimeUtil.formatElapsedTime(duration));
+            }
+            if (checkers != null &amp;&amp; !checkers.isEmpty()) {
+                runPostModuleCheck(module.getName(), checkers, mDevice, listener);
+            }
+            module = null;
+        }
+    } catch (FileNotFoundException fnfe) {
+        throw new RuntimeException("Failed to initialize modules", fnfe);
+    }
+}
+</code></pre></div></div>
+<p>v2版本默认就把所有的测试case给全部拿到并执行，除非配置了不需要执行哪些case，否则的话默认执行全部的case。 
+这就是执行cts这个plan的时候还是会跑全部的case的原因了，因为其实不管你在执行的时候plan是谁，都是跑全部的case，如果不想跑全部的case的话，就需要去特殊定制配置文件：比如cts-java.xml 
+其中配置了</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;option name="compatibility:include-filter" value="CtsLibcoreTestCases" /&gt;
+</code></pre></div></div>
+<p>也就是说通过include-filter以及exclude-filter两个filter去特殊定制指定的plan。</p>
+
+<h2 id="执行测试">执行测试</h2>
+<p>前面已经看到，在CompatibilityTest中执行测试的执行了module.run，这个方法就是去执行测试了，在ModuleDef的run方法：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public void run(ITestInvocationListener listener) throws DeviceNotAvailableException {
+    CLog.d("Running module %s", toString());
+    // Run DynamicConfigPusher setup once more, in case cleaner has previously
+    // removed dynamic config file from the target (see b/32877809)
+    for (ITargetPreparer preparer : mDynamicConfigPreparers) {
+        runPreparerSetup(preparer);
+    }
+    // Setup
+    for (ITargetPreparer preparer : mPreparers) {
+        runPreparerSetup(preparer);
+    }
+    CLog.d("Test: %s", mTest.getClass().getSimpleName());
+    if (mTest instanceof IAbiReceiver) {
+        ((IAbiReceiver) mTest).setAbi(mAbi);
+    }
+    if (mTest instanceof IBuildReceiver) {
+        ((IBuildReceiver) mTest).setBuild(mBuild);
+    }
+    if (mTest instanceof IDeviceTest) {
+        ((IDeviceTest) mTest).setDevice(mDevice);
+    }
+    IModuleListener moduleListener = new ModuleListener(this, listener);
+    // Guarantee events testRunStarted and testRunEnded in case underlying test runner does not
+    ModuleFinisher moduleFinisher = new ModuleFinisher(moduleListener);
+    mTest.run(moduleFinisher);
+    moduleFinisher.finish();
+    // Tear down
+    for (ITargetCleaner cleaner : mCleaners) {
+        CLog.d("Cleaner: %s", cleaner.getClass().getSimpleName());
+        cleaner.tearDown(mDevice, mBuild, null);
+    }
+}
+</code></pre></div></div>
+<p>看这个地方好像有些似曾相识，再看前面的config的配置文件，联想到框架，V2是把每个测试module都作为一个configuration，框架做的就是去拿到测试的所有module，但是每个module的执行还是走了框架，因为每个module现在都被认为是一个configuration了，只需要去逐个执行测试module即可。</p>
+
+<h2 id="总结">总结</h2>
+<p>v2把每个module作为一个configuration去处理，各个module之间都是独立的。
+另外VTS其实入口也是CompatibilityConsole，运行方式跟这个一样，包括前面SuiteInfo文件的生成，也是跟CTS如出一辙。</p>
+
+<h2 id="config文件怎么来的">config文件怎么来的？</h2>
+
+      <div class="page-footer">
+        <div class="page-share">
+          <a href="https://twitter.com/intent/tweet?text=CTS测试框架整理_V2&url=http://localhost:4000/CTS%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6%E6%95%B4%E7%90%86_V2/" title="Share on Twitter" rel="nofollow" target="_blank">Twitter</a>
+          <a href="https://facebook.com/sharer.php?u=http://localhost:4000/CTS%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6%E6%95%B4%E7%90%86_V2/" title="Share on Facebook" rel="nofollow" target="_blank">Facebook</a>
+          <a href="https://plus.google.com/share?url=http://localhost:4000/CTS%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6%E6%95%B4%E7%90%86_V2/" title="Share on Google+" rel="nofollow" target="_blank">Google+</a>
+        </div>
+        <div class="page-tag">
+          
+        </div>
+      </div>
+      <section class="comment-area">
+  <div class="comment-wrapper">
+    
+    <div id="disqus_thread" class="article-comments"></div>
+    <script>
+      (function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//mr-zhang.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+  </div>
+</section> <!-- End Comment Area -->
+
+    </div> <!-- End Wrap Content -->
+  </div> <!-- End Page Content -->
+</article> <!-- End Article Page -->
+
+</div>
+
+  </div>
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+</script> <!-- End Analytics -->
+
+</body>
+</html>
