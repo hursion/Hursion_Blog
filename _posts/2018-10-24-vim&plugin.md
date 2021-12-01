@@ -10,3 +10,5 @@ comments: true
 我的[.vimrc](https://github.com/hursion/Linux/blob/master/.vimrc)
 关于[配置参考](https://www.cnblogs.com/zhongcq/p/3642794.html)
 
+https://github.com/yangyangwithgnu/use_vim_as_ide
+
