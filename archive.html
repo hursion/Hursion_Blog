@@ -1,0 +1,25 @@
+---
+layout: default
+title: Archive
+permalink: /archive/
+---
+
+<section class="archive-container">
+  <h1>// ARCHIVE</h1>
+
+  {% assign postsByYear = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+  {% for year in postsByYear %}
+  <div class="archive-year">
+    <div class="archive-year-label">{{ year.name }}</div>
+    {% for post in year.items %}
+    <div class="archive-entry">
+      <span class="archive-entry-date">{{ post.date | date: '%m/%d' }}</span>
+      <a class="archive-entry-title" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+      {% if post.category %}
+      <span class="archive-entry-cat">{{ post.category }}</span>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+  {% endfor %}
+</section>

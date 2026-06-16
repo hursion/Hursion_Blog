@@ -1,12 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 {% include head.html %}
 <body>
+
+  <!-- Navigation -->
+  <nav class="cyber-nav">
+    <a href="{{ site.baseurl }}/" class="nav-brand">&#9670; {{ site.title }}</a>
+    <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="{{ site.baseurl }}/">Home</a></li>
+      <li><a href="{{ site.baseurl }}/archive/">Archive</a></li>
+      <li><a href="{{ site.baseurl }}/tags/">Tags</a></li>
+    </ul>
+  </nav>
 
   <div class="wrapper">
     {{ content }}
   </div>
-  
+
   {% include analytics.html %}
 </body>
 </html>

@@ -1,8 +1,6 @@
-title: 生活不止眼前的苟且，还有远方和田野
+title: Hursion's CyberLog
 description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Android developer's digital nexus. Exploring systems, code, and beyond.
 permalink: ':title/'
 baseurl: "/Hursion_Blog" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
