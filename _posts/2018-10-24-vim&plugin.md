@@ -1,8 +1,10 @@
 ---
 layout: post
 title: Linux vim plugin
-category: Linux
+category: 工具与效率
+tags: [Vim, Linux]
 comments: true
+published: false
 
 ---
 # vim & plugin

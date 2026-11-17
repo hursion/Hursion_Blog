@@ -2,37 +2,72 @@
 layout: default
 ---
 
-<!-- Hero Section -->
-<section class="cyber-hero">
-  <a href="{{ site.baseurl }}/">
-    <img class="hero-avatar" src="{{ site.baseurl }}/assets/img/{% if site.author-img %}{{ site.author-img }}{% endif %}" alt="{{ site.author }}">
-  </a>
-  <h1 class="glitch-title" data-text="{{ site.author }}">{{ site.author }}</h1>
-  <p class="hero-subtitle">
-    {{ site.about-author }}<span class="cursor"></span>
-  </p>
-  <div class="hero-social">
-    {% if site.social-github %}
-      <a href="https://github.com/{{ site.social-github }}" target="_blank" title="GitHub"><i class="fa fa-github"></i></a>
-    {% endif %}
-    {% if site.social-twitter %}
-      <a href="https://twitter.com/{{ site.social-twitter }}" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a>
-    {% endif %}
-    {% if site.social-linkedin %}
-      <a href="https://in.linkedin.com/in/{{ site.social-linkedin }}" target="_blank" title="LinkedIn"><i class="fa fa-linkedin"></i></a>
-    {% endif %}
-    {% if site.social-email %}
-      <a href="mailto:{{ site.social-email }}" title="Email"><i class="fa fa-envelope-o"></i></a>
-    {% endif %}
+{% if paginator.page == 1 %}
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-text reveal">
+      <div class="hero-kicker">Android · Framework · Multimedia</div>
+      <h1 class="hero-title">{{ site.author }}<span class="accent-dot">.</span></h1>
+      <p class="hero-bio">{{ site.about-author }}</p>
+      <div class="hero-actions">
+        {% if site.social-github %}
+        <a class="btn btn-primary" href="https://github.com/{{ site.social-github }}" target="_blank" rel="noopener">
+          <i class="fa fa-github" aria-hidden="true"></i> GitHub
+        </a>
+        {% endif %}
+        {% if site.social-email %}
+        <a class="btn btn-ghost" href="mailto:{{ site.social-email }}">
+          <i class="fa fa-envelope-o" aria-hidden="true"></i> 联系我
+        </a>
+        {% endif %}
+        <a class="btn btn-ghost" href="{{ site.baseurl }}/archive/">
+          <i class="fa fa-archive" aria-hidden="true"></i> 文章归档
+        </a>
+      </div>
+    </div>
+    <a class="hero-avatar-wrap reveal" href="{{ site.baseurl }}/archive/" aria-label="{{ site.author }}">
+      <img class="hero-avatar" src="{{ site.baseurl }}/assets/img/{{ site.author-img }}" alt="{{ site.author }}">
+    </a>
+  </div>
+
+  {% assign first_post = site.posts | last %}
+  <div class="hero-stats reveal">
+    <div class="stat">
+      <span class="stat-num"><em>{{ site.posts.size }}</em></span>
+      <span class="stat-label">篇文章</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">{{ site.data.categories.size }}</span>
+      <span class="stat-label">个分类</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">{{ site.tags.size }}</span>
+      <span class="stat-label">个标签</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">{{ first_post.date | date: '%Y' }}</span>
+      <span class="stat-label">开始记录</span>
+    </div>
   </div>
 </section>
 
-<!-- Post Grid -->
-<div class="post-grid">
-  {{ content }}
-</div>
+<section class="section" id="categories">
+  <div class="section-head reveal">
+    <h2 class="section-title">内容分类</h2>
+    <div class="section-rule"></div>
+    <a class="section-link" href="{{ site.baseurl }}/categories/">全部分类<i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+  </div>
+  <div class="cat-grid">
+    {% for cat in site.data.categories %}
+    {% assign cat_posts = site.categories[cat.name] %}
+    <a class="cat-card cat-{{ cat.slug }} reveal" href="{{ site.baseurl }}/categories/#{{ cat.slug }}">
+      <div class="cat-icon"><i class="fa {{ cat.icon }}" aria-hidden="true"></i></div>
+      <div class="cat-name">{{ cat.name }}<span class="cat-count">{{ cat_posts.size }}</span></div>
+      <p class="cat-desc">{{ cat.desc }}</p>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
 
-<!-- Footer -->
-<footer class="cyber-footer">
-  <p class="copyright">{{ site.time | date: '%Y' }} &copy; {{ site.author }} &mdash; Powered by Jekyll</p>
-</footer>
+{{ content }}

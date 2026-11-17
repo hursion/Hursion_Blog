@@ -1,0 +1,24 @@
+- name: Android 系统
+  slug: android
+  icon: fa-android
+  desc: Framework、Native 服务、内核与系统构建
+
+- name: 多媒体
+  slug: media
+  icon: fa-play-circle
+  desc: Audio / Video / Camera 调试与源码分析
+
+- name: 测试与认证
+  slug: testing
+  icon: fa-check-circle
+  desc: CTS / GMS / CTA 认证测试与问题定位
+
+- name: 工具与效率
+  slug: tools
+  icon: fa-terminal
+  desc: Vim、Systrace、bugreport 与日常提效
+
+- name: 随笔与学习
+  slug: notes
+  icon: fa-pencil
+  desc: 学习方法、知识体系与博客搭建

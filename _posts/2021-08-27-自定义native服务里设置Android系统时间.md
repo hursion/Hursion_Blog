@@ -1,3 +1,8 @@
+---
+title: 自定义 Native 服务里设置 Android 系统时间
+category: Android 系统
+tags: [Native, SELinux]
+---
 # 代码实现
 
 ```c

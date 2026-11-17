@@ -1,6 +1,6 @@
-title: Hursion's CyberLog
+title: Hursion's Blog
 description: > # this means to ignore newlines until "baseurl:"
-  Android developer's digital nexus. Exploring systems, code, and beyond.
+  Android 系统开发笔记：框架、多媒体、测试认证与工具效率。
 permalink: ':title/'
 baseurl: "/Hursion_Blog" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
@@ -9,7 +9,7 @@ site-twitter: #if your site has a twitter account, enter it here
 # Author Settings
 author: Hursion Zhang # add your name
 author-img: hursion_zhang.jpg # add your photo
-about-author: I am a android developer focusing on apps & fw. Always hungry to keep learning. # add description
+about-author: Android 系统开发工程师，专注 App 与 Framework。记录系统源码、多媒体调试与认证测试中的点滴，保持学习，持续分享。 # add description
 social-twitter: # add your Twitter handle
 social-facebook: # add your Facebook handle
 social-github: hursion # add your Github handle
@@ -29,7 +29,15 @@ plugins:
   - jekyll-paginate
   - jemoji
 
-paginate: 8
+paginate: 10
 paginate_path: "/page/:num"
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      comments: true
 
 exclude: ["node_modules", "gulpfile.js", "package.json", "yarn.lock"]

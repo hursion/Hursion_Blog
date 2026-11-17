@@ -1,3 +1,8 @@
+---
+title: MediaRecorder 工厂测试卡住
+category: 多媒体
+tags: [Camera, 调试]
+---
 工厂生产中时常出现整机测试过程中卡在麦克风测试的问题
 分析总结：
 1. MediaRecorder API(8.1)调用方法无问题，native setOutputFile调用存在耗时；

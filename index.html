@@ -1,20 +1,38 @@
 ---
 layout: main
 ---
-{% for post in paginator.posts %}
-<article class="post">
-  {% if post.img %}
-    <a class="post-thumbnail" style="background-image: url({{"/assets/img/" | prepend: site.baseurl | append : post.img}})" href="{{post.url | prepend: site.baseurl}}"></a>
-  {% endif %}
-  <div class="post-content">
-    <div class="post-meta">
-      <span class="post-date">{{post.date | date: '%Y.%m.%d'}}</span>
-      <span class="post-words">{% capture words %}{{ post.content | number_of_words }}{% endcapture %}{% unless words contains "-" %}{{ words | plus: 250 | divided_by: 250 | append: ' min read' }}{% endunless %}</span>
-    </div>
-    <h2 class="post-title"><a href="{{post.url | prepend: site.baseurl}}">{{post.title}}</a></h2>
-    <p class="post-excerpt">{{ post.content | strip_html | truncatewords: 25 }}</p>
+<section class="section" id="latest">
+  <div class="section-head reveal">
+    <h2 class="section-title">{% if paginator.page > 1 %}文章列表 · 第 {{ paginator.page }} 页{% else %}最新文章{% endif %}</h2>
+    <div class="section-rule"></div>
+    <a class="section-link" href="{{ site.baseurl }}/archive/">按年份浏览<i class="fa fa-arrow-right" aria-hidden="true"></i></a>
   </div>
-</article>
-{% endfor %}
 
-{% include pagination.html %}
+  <div class="post-list">
+    {% for post in paginator.posts %}
+    {% assign cat_slug = 'notes' %}
+    {% for cat in site.data.categories %}
+      {% if cat.name == post.category %}{% assign cat_slug = cat.slug %}{% endif %}
+    {% endfor %}
+    {% assign chars = post.content | strip_html | size %}
+    {% assign minutes = chars | divided_by: 400 | plus: 1 %}
+    {% assign ex = post.excerpt | strip_html | strip_newlines | strip | remove: '#' %}
+    {% if ex.size < 24 %}{% assign ex = post.content | strip_html | strip_newlines | strip | remove: '#' %}{% endif %}
+    <article class="post-row reveal">
+      <div class="post-side">
+        <span class="post-date">{{ post.date | date: '%Y.%m.%d' }}</span>
+        {% if post.category %}
+        <a class="cat-chip cat-{{ cat_slug }}" href="{{ site.baseurl }}/categories/#{{ cat_slug }}">{{ post.category }}</a>
+        {% endif %}
+        <span class="post-read"><i class="fa fa-clock-o" aria-hidden="true"></i>约 {{ minutes }} 分钟</span>
+      </div>
+      <div class="post-main">
+        <h2 class="post-title"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+        <p class="post-excerpt">{{ ex | truncate: 110 }}</p>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+
+  {% include pagination.html %}
+</section>

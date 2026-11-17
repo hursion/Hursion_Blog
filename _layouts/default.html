@@ -3,23 +3,73 @@
 {% include head.html %}
 <body>
 
-  <!-- Navigation -->
-  <nav class="cyber-nav">
-    <a href="{{ site.baseurl }}/" class="nav-brand">&#9670; {{ site.title }}</a>
-    <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
-    <ul class="nav-links">
-      <li><a href="{{ site.baseurl }}/">Home</a></li>
-      <li><a href="{{ site.baseurl }}/archive/">Archive</a></li>
-      <li><a href="{{ site.baseurl }}/tags/">Tags</a></li>
-    </ul>
+  <div class="progress-bar" aria-hidden="true"></div>
+
+  <nav class="site-nav" aria-label="主导航">
+    <div class="nav-inner">
+      <a href="{{ site.baseurl }}/" class="brand">
+        <span class="brand-seal">H</span>{{ site.title }}
+      </a>
+      <ul class="nav-links">
+        <li><a href="{{ site.baseurl }}/" data-home>首页</a></li>
+        <li><a href="{{ site.baseurl }}/categories/">分类</a></li>
+        <li><a href="{{ site.baseurl }}/archive/">归档</a></li>
+        <li><a href="{{ site.baseurl }}/tags/">标签</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" type="button" aria-label="切换深浅色模式" title="切换深浅色模式">
+          <i class="fa fa-moon-o" aria-hidden="true"></i>
+          <i class="fa fa-sun-o" aria-hidden="true"></i>
+        </button>
+        <button class="nav-toggle" type="button" aria-label="打开菜单" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
   </nav>
 
-  <div class="wrapper">
+  <main class="wrapper">
     {{ content }}
-  </div>
+  </main>
 
-  {% include analytics.html %}
+  <footer class="site-footer">
+    <div class="wrapper footer-grid">
+      <div class="footer-brand">
+        <a href="{{ site.baseurl }}/" class="brand"><span class="brand-seal">H</span>{{ site.title }}</a>
+        <p>记录 Android 系统开发中的调试、源码与思考。</p>
+      </div>
+      <nav class="footer-links" aria-label="页脚导航">
+        <a href="{{ site.baseurl }}/">首页</a>
+        <a href="{{ site.baseurl }}/categories/">分类</a>
+        <a href="{{ site.baseurl }}/archive/">归档</a>
+        <a href="{{ site.baseurl }}/tags/">标签</a>
+      </nav>
+      <div class="footer-social">
+        {% if site.social-github %}
+        <a href="https://github.com/{{ site.social-github }}" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub"><i class="fa fa-github"></i></a>
+        {% endif %}
+        {% if site.social-email %}
+        <a href="mailto:{{ site.social-email }}" title="Email" aria-label="Email"><i class="fa fa-envelope-o"></i></a>
+        {% endif %}
+        {% if site.social-twitter %}
+        <a href="https://twitter.com/{{ site.social-twitter }}" target="_blank" rel="noopener" title="Twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+        {% endif %}
+        {% if site.social-linkedin %}
+        <a href="https://in.linkedin.com/in/{{ site.social-linkedin }}" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
+        {% endif %}
+      </div>
+    </div>
+    <div class="wrapper footer-base">
+      <span>&copy; {{ site.time | date: '%Y' }} {{ site.author }} · Powered by Jekyll</span>
+      <span>Made with <i class="fa fa-heart" aria-hidden="true"></i> &amp; curiosity</span>
+    </div>
+  </footer>
+
+  <button class="back-top" type="button" aria-label="返回顶部" title="返回顶部">
+    <i class="fa fa-chevron-up" aria-hidden="true"></i>
+  </button>
+
+  {% include javascripts.html %}
+  {% if site.analytics %}{% include analytics.html %}{% endif %}
 </body>
 </html>

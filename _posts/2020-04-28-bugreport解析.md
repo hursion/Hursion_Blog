@@ -1,3 +1,8 @@
+---
+title: Bugreport 解析
+category: 工具与效率
+tags: [调试, bugreport]
+---
 1.下载源码[ChkBugReprot](https://github.com/sonyxperiadev/ChkBugReport)，See the [wiki](https://github.com/sonyxperiadev/ChkBugReport/wiki)
 
 2.通过andorid Studio等工具编译

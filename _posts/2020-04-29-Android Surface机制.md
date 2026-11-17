@@ -1,3 +1,8 @@
+---
+title: Android Surface 机制
+category: Android 系统
+tags: [Framework, Surface]
+---
 # 如何理解surface
 
 1.app与surface如何交互；

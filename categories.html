@@ -1,0 +1,29 @@
+---
+layout: default
+title: 分类
+permalink: /categories/
+---
+<div class="page-head reveal">
+  <h1 class="page-title">内容分类</h1>
+  <p class="page-sub">共 {{ site.posts.size }} 篇文章，按主题归入 {{ site.data.categories.size }} 个分类。</p>
+</div>
+
+{% for cat in site.data.categories %}
+{% assign cat_posts = site.categories[cat.name] %}
+<section class="cat-section cat-{{ cat.slug }} reveal" id="{{ cat.slug }}">
+  <div class="cat-section-head">
+    <div class="cat-icon"><i class="fa {{ cat.icon }}" aria-hidden="true"></i></div>
+    <div>
+      <h2 class="cat-section-title">{{ cat.name }}</h2>
+      <p class="cat-section-desc">{{ cat.desc }}</p>
+    </div>
+    <span class="cat-section-count">{{ cat_posts.size }} 篇</span>
+  </div>
+  {% for post in cat_posts %}
+  <div class="cat-post-row">
+    <span class="entry-date">{{ post.date | date: '%Y.%m.%d' }}</span>
+    <a class="entry-title" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+  </div>
+  {% endfor %}
+</section>
+{% endfor %}

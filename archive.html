@@ -1,25 +1,33 @@
 ---
 layout: default
-title: Archive
+title: 归档
 permalink: /archive/
 ---
+<div class="page-head reveal">
+  <h1 class="page-title">文章归档</h1>
+  <p class="page-sub">{{ site.posts.size }} 篇文章，按时间倒序排列。</p>
+</div>
 
-<section class="archive-container">
-  <h1>// ARCHIVE</h1>
-
-  {% assign postsByYear = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
-  {% for year in postsByYear %}
-  <div class="archive-year">
-    <div class="archive-year-label">{{ year.name }}</div>
-    {% for post in year.items %}
-    <div class="archive-entry">
-      <span class="archive-entry-date">{{ post.date | date: '%m/%d' }}</span>
-      <a class="archive-entry-title" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-      {% if post.category %}
-      <span class="archive-entry-cat">{{ post.category }}</span>
-      {% endif %}
-    </div>
-    {% endfor %}
+{% assign postsByYear = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+{% for year in postsByYear %}
+<section class="archive-year reveal">
+  <div class="year-head">
+    <span class="year-label">{{ year.name }}</span>
+    <span class="year-count">{{ year.items | size }} 篇</span>
+    <div class="year-rule"></div>
+  </div>
+  {% for post in year.items %}
+  {% assign cat_slug = 'notes' %}
+  {% for cat in site.data.categories %}
+    {% if cat.name == post.category %}{% assign cat_slug = cat.slug %}{% endif %}
+  {% endfor %}
+  <div class="archive-entry">
+    <span class="entry-date">{{ post.date | date: '%m/%d' }}</span>
+    <a class="entry-title" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+    {% if post.category %}
+    <a class="cat-chip cat-{{ cat_slug }}" href="{{ site.baseurl }}/categories/#{{ cat_slug }}">{{ post.category }}</a>
+    {% endif %}
   </div>
   {% endfor %}
 </section>
+{% endfor %}

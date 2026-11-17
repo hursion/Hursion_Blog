@@ -1,15 +1,29 @@
-<div class="pagination-wrap">
+{% if paginator.total_pages > 1 %}
+<nav class="pagination" aria-label="文章分页">
   {% if paginator.previous_page %}
     {% if paginator.previous_page == 1 %}
-    <a class="newer-posts" href="{{ site.baseurl }}/"><i class="fa fa-chevron-left"></i></a>
+    <a class="page-btn" href="{{ site.baseurl }}/" aria-label="上一页"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
     {% else %}
-    <a class="newer-posts" href="{{ site.baseurl }}/page/{{ paginator.previous_page }}/"><i class="fa fa-chevron-left"></i></a>
+    <a class="page-btn" href="{{ site.baseurl }}/page/{{ paginator.previous_page }}/" aria-label="上一页"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
     {% endif %}
+  {% else %}
+  <span class="page-btn disabled" aria-hidden="true"><i class="fa fa-chevron-left"></i></span>
   {% endif %}
 
-  <span class="page-number">{{ paginator.page }} / {{ paginator.total_pages }}</span>
+  {% for i in (1..paginator.total_pages) %}
+    {% if i == paginator.page %}
+    <span class="page-btn current" aria-current="page">{{ i }}</span>
+    {% elsif i == 1 %}
+    <a class="page-btn" href="{{ site.baseurl }}/">1</a>
+    {% else %}
+    <a class="page-btn" href="{{ site.baseurl }}/page/{{ i }}/">{{ i }}</a>
+    {% endif %}
+  {% endfor %}
 
   {% if paginator.next_page %}
-  <a class="older-posts" href="{{ site.baseurl }}/page/{{ paginator.next_page }}/"><i class="fa fa-chevron-right"></i></a>
+  <a class="page-btn" href="{{ site.baseurl }}/page/{{ paginator.next_page }}/" aria-label="下一页"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+  {% else %}
+  <span class="page-btn disabled" aria-hidden="true"><i class="fa fa-chevron-right"></i></span>
   {% endif %}
-</div>
+</nav>
+{% endif %}

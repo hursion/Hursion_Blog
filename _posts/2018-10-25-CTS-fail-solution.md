@@ -1,7 +1,8 @@
 ---
 layout: post
-title: GMS认证问题分析收集
-category: Android CTS|GTS|STS|VTS
+title: GMS 认证问题分析收集
+category: 测试与认证
+tags: [GMS, CTS]
 comments: true
 
 ---

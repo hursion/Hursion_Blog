@@ -23,7 +23,6 @@
 	{% endif %}
 	{% if page.date %}
 		<meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time">
-		<meta content="{{ site.url }}/about/" property="article:author">
 	{% endif %}
 	{% if page.img %}
 		<meta content="{{ site.url }}{{ site.baseurl }}/assets/img/{{ page.img }}" property="og:image">
@@ -42,43 +41,38 @@
 	{% endif %}
 
 	<meta name="twitter:card" content="summary">
-	<meta name="twitter:site" content="@{{ site.site-twitter }}">
-	<meta name="twitter:creator" content="@{{ site.social-twitter }}">
 	{% if page.title %}
 		<meta name="twitter:title" content="{{ page.title }}">
 	{% else %}
 		<meta name="twitter:title" content="{{ site.title }}">
-	{% endif %}
-	{% if page.url %}
-		<meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
 	{% endif %}
 	{% if page.description %}
 		<meta name="twitter:description" content="{{ page.description }}">
 	{% else %}
 		<meta name="twitter:description" content="{{ site.description }}">
 	{% endif %}
-	{% if page.img %}
-		<meta name="twitter:image:src" content="{{ site.url }}{{ site.baseurl }}/assets/img/{{ page.img }}">
-	{% else %}
-		<meta name="twitter:image:src" content="{{ site.url }}{{ site.baseurl }}/assets/img/{{ site.author-img }}">
-	{% endif %}
 
-	<meta name="description" content="{{ page.description }}">
+	<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<meta property="og:image" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#f6f3ec">
 	<link rel="shortcut icon" href="{{ "/assets/img/favicon/favicon.ico" | prepend: site.baseurl }}" type="image/x-icon">
 	<link rel="apple-touch-icon" href="{{ "/assets/img/favicon/apple-touch-icon.png" | prepend: site.baseurl }}">
 	<link rel="apple-touch-icon" sizes="72x72" href="{{ "/assets/img/favicon/apple-touch-icon-72x72.png" | prepend: site.baseurl }}">
 	<link rel="apple-touch-icon" sizes="144x144" href="{{ "/assets/img/favicon/apple-touch-icon-144x144.png" | prepend: site.baseurl }}">
-	<!-- Cyberpunk Theme Colors -->
-	<meta name="theme-color" content="#0a0a0f">
-	<meta name="msapplication-navbutton-color" content="#0a0a0f">
-	<meta name="apple-mobile-web-app-status-bar-style" content="#0a0a0f">
-	<!-- Google Fonts - Cyberpunk -->
-	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@400;700&family=Noto+Sans+SC:wght@300;400;700&display=swap" rel="stylesheet">
-	<!-- Font Awesome -->
+	<script>
+		(function () {
+			try {
+				var t = localStorage.getItem('hb-theme');
+				if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+				document.documentElement.setAttribute('data-theme', t);
+				document.documentElement.classList.add('js');
+			} catch (e) {}
+		})();
+	</script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700;900&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="{{ "/assets/fonts/font-awesome/css/font-awesome.min.css" | prepend: site.baseurl }}">
-	<!-- Cyberpunk Styles -->
 	<link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}">
 </head>

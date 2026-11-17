@@ -1,4 +1,8 @@
-
+---
+title: 后台 startService 服务 1 分钟自动销毁
+category: Android 系统
+tags: [Framework, Service]
+---
 
 # Log
 

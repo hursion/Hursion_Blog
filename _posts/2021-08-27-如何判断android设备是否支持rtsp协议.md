@@ -1,3 +1,8 @@
+---
+title: 如何判断 Android 设备是否支持 RTSP 协议
+category: 多媒体
+tags: [RTSP, 网络]
+---
 使用ps -A看看mediaserver是否启动了，如果mediaserver启动了，是可以支持rtsp协议的；
 
 ```shell
