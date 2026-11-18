@@ -1,0 +1,16 @@
+{
+  "attachmentFolderPath": "assets/img",
+  "alwaysUpdateLinks": true,
+  "newFileLocation": "folder",
+  "newFileFolderPath": "_posts",
+  "showUnsupportedFiles": false,
+  "userIgnoreFilters": [
+    "_site/",
+    "node_modules/",
+    "_layouts/",
+    "_includes/",
+    "_data/",
+    "assets/",
+    ".git/"
+  ]
+}

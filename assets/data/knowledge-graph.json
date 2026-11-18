@@ -1,0 +1,1718 @@
+{
+  "nodes": [
+    {
+      "name": "分类：Android 系统",
+      "type": "topic",
+      "summary": "博客分类：Android 系统"
+    },
+    {
+      "name": "分类：多媒体",
+      "type": "topic",
+      "summary": "博客分类：多媒体"
+    },
+    {
+      "name": "分类：测试与认证",
+      "type": "topic",
+      "summary": "博客分类：测试与认证"
+    },
+    {
+      "name": "分类：工具与效率",
+      "type": "topic",
+      "summary": "博客分类：工具与效率"
+    },
+    {
+      "name": "分类：随笔与学习",
+      "type": "topic",
+      "summary": "博客分类：随笔与学习"
+    },
+    {
+      "name": "标签：ADB",
+      "type": "concept",
+      "summary": "共 1 篇文章",
+      "source_count": 1
+    },
+    {
+      "name": "标签：APK",
+      "type": "concept",
+      "summary": "共 2 篇文章",
+      "source_count": 2
+    },
+    {
+      "name": "标签：Android",
+      "type": "concept",
+      "summary": "共 1 篇文章",
+      "source_count": 1
+    },
+    {
+      "name": "标签：Android P",
+      "type": "concept",
+      "summary": "共 1 篇文章",
+      "source_count": 1
+    },
+    {
+      "name": "标签：Audio",
+      "type": "concept",
+      "summary": "共 8 篇文章",
+      "source_count": 8
+    },
+    {
+      "name": "标签：Bluetooth",
+      "type": "concept",
+      "summary": "共 2 篇文章",
+      "source_count": 2
+    },
+    {
+      "name": "标签：CDD",
+      "type": "concept",
+      "summary": "共 1 篇文章",
+      "source_count": 1
+    },
+    {
+      "name": "标签：CTA",
+      "type": "concept",
+      "summary": "共 1 篇文章",
+      "source_count": 1
+    },
+    {
+      "name": "标签：CTS",
+      "type": "concept",
+      "summary": "共 6 篇文章",
+      "source_count": 6
+    },
+    {
+      "name": "标签：Camera",
+      "type": "concept",
+      "summary": "共 5 篇文章",
+      "source_count": 5
+    },
+    {
+      "name": "标签：Framework",
+      "type": "concept",
+      "summary": "共 2 篇文章",
+      "source_count": 2
+    },
+    {
+      "name": "标签：GCC",
+      "type": "concept",
+      "summary": "共 1 篇文章",
+      "source_count": 1
+    },
+    {
+      "name": "标签：GMS",
+      "type": "concept",
+      "summary": "共 2 篇文章",
+      "source_count": 2
+    },
+    {
+      "name": "标签：HAL",
+      "type": "concept",
+      "summary": "共 1 篇文章",
+      "source_count": 1
+    },
+    {
+      "name": "标签：JNI",
+      "type": "concept",
+      "summary": "共 1 篇文章",
+      "source_count": 1
+    },
+    {
+      "name": "标签：Jekyll",
+      "type": "concept",
+      "summary": "共 1 篇文章",
+      "source_count": 1
+    },
+    {
+      "name": "标签：Kernel",
+      "type": "concept",
+      "summary": "共 3 篇文章",
+      "source_count": 3
+    },
+    {
+      "name": "标签：Linux",
+      "type": "concept",
+      "summary": "共 5 篇文章",
+      "source_count": 5
+    },
+    {
+      "name": "标签：NDK",
+      "type": "concept",
+      "summary": "共 1 篇文章",
+      "source_count": 1
+    },
+    {
+      "name": "标签：Native",
+      "type": "concept",
+      "summary": "共 2 篇文章",
+      "source_count": 2
+    },
+    {
+      "name": "标签：Overlay",
+      "type": "concept",
+      "summary": "共 1 篇文章",
+      "source_count": 1
+    },
+    {
+      "name": "标签：RTSP",
+      "type": "concept",
+      "summary": "共 1 篇文章",
+      "source_count": 1
+    },
+    {
+      "name": "标签：SELinux",
+      "type": "concept",
+      "summary": "共 2 篇文章",
+      "source_count": 2
+    },
+    {
+      "name": "标签：SSH",
+      "type": "concept",
+      "summary": "共 1 篇文章",
+      "source_count": 1
+    },
+    {
+      "name": "标签：Service",
+      "type": "concept",
+      "summary": "共 1 篇文章",
+      "source_count": 1
+    },
+    {
+      "name": "标签：Surface",
+      "type": "concept",
+      "summary": "共 1 篇文章",
+      "source_count": 1
+    },
+    {
+      "name": "标签：Systrace",
+      "type": "concept",
+      "summary": "共 1 篇文章",
+      "source_count": 1
+    },
+    {
+      "name": "标签：TF",
+      "type": "concept",
+      "summary": "共 2 篇文章",
+      "source_count": 2
+    },
+    {
+      "name": "标签：Termux",
+      "type": "concept",
+      "summary": "共 1 篇文章",
+      "source_count": 1
+    },
+    {
+      "name": "标签：Ubuntu",
+      "type": "concept",
+      "summary": "共 1 篇文章",
+      "source_count": 1
+    },
+    {
+      "name": "标签：VSCode",
+      "type": "concept",
+      "summary": "共 1 篇文章",
+      "source_count": 1
+    },
+    {
+      "name": "标签：Video",
+      "type": "concept",
+      "summary": "共 1 篇文章",
+      "source_count": 1
+    },
+    {
+      "name": "标签：Vim",
+      "type": "concept",
+      "summary": "共 3 篇文章",
+      "source_count": 3
+    },
+    {
+      "name": "标签：Windows",
+      "type": "concept",
+      "summary": "共 1 篇文章",
+      "source_count": 1
+    },
+    {
+      "name": "标签：Yocto",
+      "type": "concept",
+      "summary": "共 1 篇文章",
+      "source_count": 1
+    },
+    {
+      "name": "标签：adb",
+      "type": "concept",
+      "summary": "共 1 篇文章",
+      "source_count": 1
+    },
+    {
+      "name": "标签：bugreport",
+      "type": "concept",
+      "summary": "共 1 篇文章",
+      "source_count": 1
+    },
+    {
+      "name": "标签：hprof",
+      "type": "concept",
+      "summary": "共 1 篇文章",
+      "source_count": 1
+    },
+    {
+      "name": "标签：llama.cpp",
+      "type": "concept",
+      "summary": "共 1 篇文章",
+      "source_count": 1
+    },
+    {
+      "name": "标签：screen",
+      "type": "concept",
+      "summary": "共 1 篇文章",
+      "source_count": 1
+    },
+    {
+      "name": "标签：sdcardfs",
+      "type": "concept",
+      "summary": "共 1 篇文章",
+      "source_count": 1
+    },
+    {
+      "name": "标签：内存",
+      "type": "concept",
+      "summary": "共 1 篇文章",
+      "source_count": 1
+    },
+    {
+      "name": "标签：反编译",
+      "type": "concept",
+      "summary": "共 1 篇文章",
+      "source_count": 1
+    },
+    {
+      "name": "标签：多媒体",
+      "type": "concept",
+      "summary": "共 1 篇文章",
+      "source_count": 1
+    },
+    {
+      "name": "标签：学习",
+      "type": "concept",
+      "summary": "共 1 篇文章",
+      "source_count": 1
+    },
+    {
+      "name": "标签：工具",
+      "type": "concept",
+      "summary": "共 1 篇文章",
+      "source_count": 1
+    },
+    {
+      "name": "标签：性能",
+      "type": "concept",
+      "summary": "共 1 篇文章",
+      "source_count": 1
+    },
+    {
+      "name": "标签：效率",
+      "type": "concept",
+      "summary": "共 1 篇文章",
+      "source_count": 1
+    },
+    {
+      "name": "标签：树莓派",
+      "type": "concept",
+      "summary": "共 1 篇文章",
+      "source_count": 1
+    },
+    {
+      "name": "标签：模拟器",
+      "type": "concept",
+      "summary": "共 1 篇文章",
+      "source_count": 1
+    },
+    {
+      "name": "标签：正则",
+      "type": "concept",
+      "summary": "共 1 篇文章",
+      "source_count": 1
+    },
+    {
+      "name": "标签：编译",
+      "type": "concept",
+      "summary": "共 2 篇文章",
+      "source_count": 2
+    },
+    {
+      "name": "标签：网络",
+      "type": "concept",
+      "summary": "共 1 篇文章",
+      "source_count": 1
+    },
+    {
+      "name": "标签：调试",
+      "type": "concept",
+      "summary": "共 5 篇文章",
+      "source_count": 5
+    },
+    {
+      "name": "标签：远程开发",
+      "type": "concept",
+      "summary": "共 1 篇文章",
+      "source_count": 1
+    },
+    {
+      "name": "标签：随笔",
+      "type": "concept",
+      "summary": "共 1 篇文章",
+      "source_count": 1
+    },
+    {
+      "name": "CTS 测试框架整理",
+      "type": "post",
+      "summary": "CTS测试框架整理_V2\ncts-tradefed框架时基于基础框架tradefederation（tools/tradefederation/）的二次封装，对于tradefederation感兴趣的可以去查阅https://source",
+      "tags": "CTS, TF",
+      "category": "测试与认证",
+      "date": "2018-10-24",
+      "published": true,
+      "source_file": "_posts/2018-10-24-CTS测试框架整理_V2.md"
+    },
+    {
+      "name": "Android CTS 指南",
+      "type": "post",
+      "summary": "Android CTS指南\n 一.简介\nCTS(Compatibility Test Suit)是Google为Android发布的一套兼容性测试用例。由于android是开源的，手机制造商及运营商可以在Android上打造，定制自己特有",
+      "tags": "CTS, GMS",
+      "category": "测试与认证",
+      "date": "2018-10-24",
+      "published": true,
+      "source_file": "_posts/2018-10-24-CTS问题指南.md"
+    },
+    {
+      "name": "Trade Federation 测试基础架构",
+      "type": "post",
+      "summary": "Trade Federation 测试基础架构\n\n 简介\nTrade Federation（简称 tradefed 或 TF）是一种连续的测试框架，专门用于在 Android 设备上运行测试。TF 可以在本地、在桌面设备上以及在平台检验处",
+      "tags": "TF, CTS",
+      "category": "测试与认证",
+      "date": "2018-10-24",
+      "published": true,
+      "source_file": "_posts/2018-10-24-TF使用.md"
+    },
+    {
+      "name": "Linux vim plugin",
+      "type": "post",
+      "summary": "vim & plugin\n\n我的.vimrc(https://github.com/hursion/Linux/blob/master/.vimrc)\n关于配置参考(https://www.cnblogs.com/zhongcq/p/36",
+      "tags": "Vim, Linux",
+      "category": "工具与效率",
+      "date": "2018-10-24",
+      "published": false,
+      "source_file": "_posts/2018-10-24-vim&plugin.md"
+    },
+    {
+      "name": "手动生成 9.0 CDD",
+      "type": "post",
+      "summary": "1.获取代码\ngit clone https://android.googlesource.com/platform/compatibility/cdd\n\n 2.编译 \npython make_cdd.py --version 9.0 -",
+      "tags": "CTS, CDD",
+      "category": "测试与认证",
+      "date": "2018-10-24",
+      "published": true,
+      "source_file": "_posts/2018-10-24-如何从源码中生成cdd.md"
+    },
+    {
+      "name": "GMS 认证问题分析收集",
+      "type": "post",
+      "summary": "|Author|Hursion|\n|---|---\n|Email|private now|\n\n目录\n===== \n CTS篇(CTS篇)\n GTS篇(GTS篇)\n VTS篇(VTS篇)\n\n CTS篇\n\n1.android.media.cts",
+      "tags": "GMS, CTS",
+      "category": "测试与认证",
+      "date": "2018-10-25",
+      "published": true,
+      "source_file": "_posts/2018-10-25-CTS-fail-solution.md"
+    },
+    {
+      "name": "搭建博客随笔",
+      "type": "post",
+      "summary": "1.安装RVM（本地网络限制无法安装，管理ruby）\n\n2.安装ruby(https://www.runoob.com/ruby/ruby-installation-unix.html)\n\n建议源码安装（http://www.ruby-la",
+      "tags": "随笔, Jekyll",
+      "category": "随笔与学习",
+      "date": "2018-10-25",
+      "published": true,
+      "source_file": "_posts/2018-10-25-搭建博客隨筆.md"
+    },
+    {
+      "name": "PMP 考试冲刺",
+      "type": "post",
+      "summary": "",
+      "tags": "",
+      "category": "",
+      "date": "2020-04-27",
+      "published": false,
+      "source_file": "_posts/2020-04-27-PMP考试冲刺.md"
+    },
+    {
+      "name": "常见工具使用",
+      "type": "post",
+      "summary": "Google 没有公开GTS code，如果需要查询，只能反编译相关apk/jar 查看。\n\n   Apk只不过是一个包含资源和汇编Java代码的zip文件。如果只是直接解压缩apk，则会留下诸如classes.dex和的文件reso",
+      "tags": "工具, 反编译",
+      "category": "工具与效率",
+      "date": "2020-04-27",
+      "published": true,
+      "source_file": "_posts/2020-04-27-常见工具使用.md"
+    },
+    {
+      "name": "Bugreport 解析",
+      "type": "post",
+      "summary": "1.下载源码ChkBugReprot(https://github.com/sonyxperiadev/ChkBugReport)，See the wiki(https://github.com/sonyxperiadev/ChkBugRe",
+      "tags": "调试, bugreport",
+      "category": "工具与效率",
+      "date": "2020-04-28",
+      "published": true,
+      "source_file": "_posts/2020-04-28-bugreport解析.md"
+    },
+    {
+      "name": "多媒体高级编程（一）",
+      "type": "post",
+      "summary": "1.使用内置的Camera相机\n\njava\n//take picture\npublic void capture(){\n    Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE",
+      "tags": "Camera, 多媒体",
+      "category": "多媒体",
+      "date": "2020-04-28",
+      "published": true,
+      "source_file": "_posts/2020-04-28-多媒体高级编程(一).md"
+    },
+    {
+      "name": "Android Surface 机制",
+      "type": "post",
+      "summary": "如何理解surface\n\n1.app与surface如何交互；\n\n2.surface和surfaceFlinger的关系。\n\n!image(https://wiki.jikexueyuan.com/project/deep-android",
+      "tags": "Framework, Surface",
+      "category": "Android 系统",
+      "date": "2020-04-29",
+      "published": true,
+      "source_file": "_posts/2020-04-29-Android Surface机制.md"
+    },
+    {
+      "name": "Activity 启动流程",
+      "type": "post",
+      "summary": "",
+      "tags": "",
+      "category": "",
+      "date": "2020-05-06",
+      "published": false,
+      "source_file": "_posts/2020-05-06-Activity启动流程.md"
+    },
+    {
+      "name": "多媒体学习总结 · Audio",
+      "type": "post",
+      "summary": "Audio学习总结（A）\n\n 基础知识\n\nhandfree 免提\n\nspeaker\n\n\n\n PCM\n\n PCM数据\n\n对声音进行PCM编码生成的是二进制序列(如下图所示), 姑且称之为PCM数据(https://en.wikipedia.",
+      "tags": "Audio",
+      "category": "多媒体",
+      "date": "2020-08-03",
+      "published": true,
+      "source_file": "_posts/2020-08-03-多媒体学习总结-Audio.md"
+    },
+    {
+      "name": "打造自己的 Vim IDE",
+      "type": "post",
+      "summary": "vim & plugin\n\n我的.vimrc(https://github.com/hursion/Linux/blob/master/.vimrc)\n关于配置参考(https://www.cnblogs.com/zhongcq/p/36",
+      "tags": "Vim, Linux",
+      "category": "工具与效率",
+      "date": "2020-08-06",
+      "published": true,
+      "source_file": "_posts/2020-08-06-打造自己的Vim-IDE.md"
+    },
+    {
+      "name": "Video 学习总结",
+      "type": "post",
+      "summary": "视频格式支持\n\nhttps://developer.android.com/guide/appendix/media-formats.html",
+      "tags": "Video",
+      "category": "多媒体",
+      "date": "2020-08-19",
+      "published": true,
+      "source_file": "_posts/2020-08-19-Video学习总结.md"
+    },
+    {
+      "name": "音频系统",
+      "type": "post",
+      "summary": "音频的基础知识\n\n 音频的数据流\n\n1.音频通路\n\n2.音频同步\n\n3.音频数据传递\n\n 音频的上层建筑\n\n\n\n\n\n强指针？",
+      "tags": "Audio",
+      "category": "多媒体",
+      "date": "2020-12-14",
+      "published": true,
+      "source_file": "_posts/2020-12-14-音频系统.md"
+    },
+    {
+      "name": "Audio 常用命令（草稿片段）",
+      "type": "post",
+      "summary": "requestAudioFocusForCall\n\n\n Audio常用命令\n\n Audio底层命令\n\n1.查询声卡设备\n\nshell\nadb shell cat /proc/asound/cards\n\n 0 sprdphone",
+      "tags": "",
+      "category": "",
+      "date": "",
+      "published": false,
+      "source_file": "_posts/2020-9-24 2020-08-06-打造自己的vim ide 142238.md"
+    },
+    {
+      "name": "Yocto 学习",
+      "type": "post",
+      "summary": "Yocto Project(https://www.yoctoproject.org/)\n\nOpenEmbedded Project(https://www.openembedded.org/wiki/Main_Page)\n\nPoky\n\nB",
+      "tags": "Yocto, Linux",
+      "category": "Android 系统",
+      "date": "2021-02-24",
+      "published": true,
+      "source_file": "_posts/2021-02-24-yocto学习.md"
+    },
+    {
+      "name": "后台 startService 服务 1 分钟自动销毁",
+      "type": "post",
+      "summary": "Log\n\n05-28 17:04:05.852 713-729/system_process W/ActivityManager: Stopping service due to app idle: u0a100 -1m46s220ms",
+      "tags": "Framework, Service",
+      "category": "Android 系统",
+      "date": "2021-08-27",
+      "published": true,
+      "source_file": "_posts/2021-08-27-后台startService服务1min中自动销毁.md"
+    },
+    {
+      "name": "如何判断 Android 设备是否支持 RTSP 协议",
+      "type": "post",
+      "summary": "使用ps -A看看mediaserver是否启动了，如果mediaserver启动了，是可以支持rtsp协议的；\n\nshell\nroot@S2:/  ps | grep media\nmedia_rw  186   1     3524",
+      "tags": "RTSP, 网络",
+      "category": "多媒体",
+      "date": "2021-08-27",
+      "published": true,
+      "source_file": "_posts/2021-08-27-如何判断android设备是否支持rtsp协议.md"
+    },
+    {
+      "name": "无副 MIC 录像无声解决方案",
+      "type": "post",
+      "summary": "无副 MIC 机型录像无声：通过 audio_policy_configuration 移除 Built-In Back Mic 设备项的解决方案。",
+      "tags": "Audio, Camera",
+      "category": "多媒体",
+      "date": "2021-08-27",
+      "published": true,
+      "source_file": "_posts/2021-08-27-无副MIC录像无声解决方案.md"
+    },
+    {
+      "name": "自定义 Native 服务里设置 Android 系统时间",
+      "type": "post",
+      "summary": "代码实现\n\nc\ndefine LOG_TAG \"timeTest\"\n\ninclude <ctype.h>\ninclude <cutils/log.h>\ninclude <cutils/properties.h>\ninclude <cuti",
+      "tags": "Native, SELinux",
+      "category": "Android 系统",
+      "date": "2021-08-27",
+      "published": true,
+      "source_file": "_posts/2021-08-27-自定义native服务里设置Android系统时间.md"
+    },
+    {
+      "name": "闭源应用如何替换图标名称等",
+      "type": "post",
+      "summary": "通过rro 或者sro overlay机制",
+      "tags": "Overlay, APK",
+      "category": "Android 系统",
+      "date": "2021-08-27",
+      "published": true,
+      "source_file": "_posts/2021-08-27-闭源应用如何替换图标名称等.md"
+    },
+    {
+      "name": "Camera API1 无预览配流控制闪光灯",
+      "type": "post",
+      "summary": "API1常规流程，setPreviewDisplay和startPreview配流后调用setFlashMode，需要开启预览后才能控制闪光灯\n\ncpp\ndiff --git a/services/camera/libcameraservi",
+      "tags": "Camera",
+      "category": "多媒体",
+      "date": "2021-08-30",
+      "published": true,
+      "source_file": "_posts/2021-08-30-CameraAPI1无预览控制闪光灯.md"
+    },
+    {
+      "name": "MediaRecorder 工厂测试卡住",
+      "type": "post",
+      "summary": "工厂生产中时常出现整机测试过程中卡在麦克风测试的问题\n分析总结：\n1. MediaRecorder API(8.1)调用方法无问题，native setOutputFile调用存在耗时；\n2. setOutputFile 在MediaRec",
+      "tags": "Camera, 调试",
+      "category": "多媒体",
+      "date": "2021-08-30",
+      "published": true,
+      "source_file": "_posts/2021-08-30-MediaRecorder工厂测试卡住.md"
+    },
+    {
+      "name": "车机 BT 音乐与导航音量共存问题",
+      "type": "post",
+      "summary": "问题描述：\n\n正常场景中音乐和导航同时出现的场景一般以应用监听AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK这个做下降低音量处理即可，但是车机场景中，BT播放音乐只请求音频焦点，未生成player，duck无法监听p",
+      "tags": "Audio, Bluetooth",
+      "category": "多媒体",
+      "date": "2021-08-30",
+      "published": true,
+      "source_file": "_posts/2021-08-30-车机BT音乐与导航音量共存问题.md"
+    },
+    {
+      "name": "CTA 测试不支持录音",
+      "type": "post",
+      "summary": "Android 9.0 无 MIC 设备不支持录音导致 CTA 测试失败，StagefrightRecorder prepareInternal 的修改记录。",
+      "tags": "CTA, Audio",
+      "category": "测试与认证",
+      "date": "2021-09-01",
+      "published": true,
+      "source_file": "_posts/2021-09-01-CTA测试不支持录音.md"
+    },
+    {
+      "name": "相机录像的码率在哪可设置",
+      "type": "post",
+      "summary": "初始化mediarecord的，在\n\n        mMediaRecorder.setProfile(mProfile);\n\n中接受一个CamcorderProfile实例作为参数。\nCamcorderProfile有一个静态方法Cam",
+      "tags": "Camera",
+      "category": "多媒体",
+      "date": "2021-09-01",
+      "published": true,
+      "source_file": "_posts/2021-09-01-相机录像的码率在哪可设置.md"
+    },
+    {
+      "name": "VC 编译 zlib",
+      "type": "post",
+      "summary": "1.下载源码\n\nhttp://zlib.net/\n\n\n\n2.运行 Command Prompt\n\n!image-20211009184718417(C:\\Users\\hursion.zhang\\AppData\\Roaming\\Typora\\",
+      "tags": "Windows, 编译",
+      "category": "工具与效率",
+      "date": "2021-10-10",
+      "published": true,
+      "source_file": "_posts/2021-10-10-VC编译zlib.md"
+    },
+    {
+      "name": "Android 8.1 Reboot 问题定位",
+      "type": "post",
+      "summary": "在 bionic system_properties 中增加属性调用打印，逐步定位 Android 8.1 异常 reboot 的触发来源。",
+      "tags": "调试, Kernel",
+      "category": "Android 系统",
+      "date": "2021-10-18",
+      "published": true,
+      "source_file": "_posts/2021-10-18-android8.1reboot问题定位.md"
+    },
+    {
+      "name": "禁止 AAC 音频",
+      "type": "post",
+      "summary": "在 MediaCodec 层屏蔽 AAC 格式支持的改动；注意 AAC 为 Android 必选格式，取消后将无法通过 CTS。",
+      "tags": "Audio, CTS",
+      "category": "多媒体",
+      "date": "2021-10-28",
+      "published": true,
+      "source_file": "_posts/2021-10-28-禁止AAC音频.md"
+    },
+    {
+      "name": "Android 4.4 蓝牙 MIC 选择问题",
+      "type": "post",
+      "summary": "Android 4.4 AudioPolicyManagerBase 中 getDeviceForInputSource 对蓝牙 MIC 输入源的设备选择逻辑与修正。",
+      "tags": "Audio, Bluetooth",
+      "category": "多媒体",
+      "date": "2021-11-02",
+      "published": true,
+      "source_file": "_posts/2021-11-02-Android4.4蓝牙MIC选择问题.md"
+    },
+    {
+      "name": "Audio 常用命令",
+      "type": "post",
+      "summary": "Audio常用命令\n\n Audio底层命令\n\n1.查询声卡设备\n\nshell\nadb shell cat /proc/asound/cards\n\n 0 sprdphone      : sprdphone - sprdphone",
+      "tags": "Audio, adb",
+      "category": "多媒体",
+      "date": "2021-12-01",
+      "published": true,
+      "source_file": "_posts/2021-12-01-Audio常用命令.md"
+    },
+    {
+      "name": "Systrace 使用",
+      "type": "post",
+      "summary": "ftrace/atrace/systrace的关系\n\nshell\nalias st-start='python /sdk/platform-tools/systrace/systrace.py'  \nalias st-start-gfx-t",
+      "tags": "Systrace, 性能",
+      "category": "工具与效率",
+      "date": "2021-12-02",
+      "published": true,
+      "source_file": "_posts/2021-12-02-Systrace使用.md"
+    },
+    {
+      "name": "常用记录",
+      "type": "post",
+      "summary": "正则去搜索后无用字符\n\n^     \tLine \\d{3-5}: A-Za-z0-9{7} \n去重\n^(.?)$\\s+?^(?=.^\\1$) \n\nvim删除重复行的命令如下：\n\n: sort u\n\n 不生成odex：\n\nmakefile",
+      "tags": "正则, Vim",
+      "category": "工具与效率",
+      "date": "2021-12-03",
+      "published": true,
+      "source_file": "_posts/2021-12-03-常用记录.md"
+    },
+    {
+      "name": "知识体系梳理",
+      "type": "post",
+      "summary": "一.编程语言\n\n二.系统开发\n\n三.边界",
+      "tags": "学习",
+      "category": "随笔与学习",
+      "date": "2021-12-04",
+      "published": true,
+      "source_file": "_posts/2021-12-04-知识体系梳理.md"
+    },
+    {
+      "name": "JNI 知会",
+      "type": "post",
+      "summary": "静态注册和动态注册\n\n 签名\n\n 类型",
+      "tags": "JNI, Native",
+      "category": "Android 系统",
+      "date": "2021-12-05",
+      "published": true,
+      "source_file": "_posts/2021-12-05-JNI知会.md"
+    },
+    {
+      "name": "内核学习",
+      "type": "post",
+      "summary": "内核学习\n\nlinux社区：\n\nhttp://vger.kernel.org/\n\n\n\n进程管理-todo",
+      "tags": "Kernel, Linux",
+      "category": "Android 系统",
+      "date": "2021-12-06",
+      "published": true,
+      "source_file": "_posts/2021-12-06-内核学习.md"
+    },
+    {
+      "name": "Android P 新增 system_server 可访问的 HAL 服务：sepolicy 改动",
+      "type": "post",
+      "summary": "在 device/sepolicy/common 中新增一个允许 system_server 访问的 HIDL HAL 服务，需要改动的 6 个 sepolicy 文件清单。",
+      "tags": "SELinux, HAL, Android P",
+      "category": "Android 系统",
+      "date": "2026-11-17",
+      "published": true,
+      "source_file": "_posts/2026-11-17-AndroidP新增HAL服务的sepolicy改动.md"
+    },
+    {
+      "name": "Android 删除文件重启后没有清除：dentry cache 深度分析",
+      "type": "post",
+      "summary": "为什么 rm files/xxx 立即生效，而 rm 应用根目录下的文件需要 drop caches？根源在 sdcardfs/bind mount 的 dentry cache 与底层 ext4 状态不一致。",
+      "tags": "Kernel, sdcardfs, 调试",
+      "category": "Android 系统",
+      "date": "2026-11-17",
+      "published": true,
+      "source_file": "_posts/2026-11-17-Android删除文件重启后没有清除.md"
+    },
+    {
+      "name": "SSH 窗口保持：screen 用法",
+      "type": "post",
+      "summary": "用 screen 保持 SSH 会话不因断线丢失：创建、分离、恢复、查询命令速查。",
+      "tags": "SSH, screen, Linux",
+      "category": "工具与效率",
+      "date": "2026-11-17",
+      "published": true,
+      "source_file": "_posts/2026-11-17-SSH窗口保持-screen用法.md"
+    },
+    {
+      "name": "system_server hprof 抓取方法",
+      "type": "post",
+      "summary": "用 am dumpheap 抓取 system_server 堆快照，再通过 Dominator Tree 与 Histogram 分析内存占用。",
+      "tags": "调试, 内存, hprof",
+      "category": "Android 系统",
+      "date": "2026-11-17",
+      "published": true,
+      "source_file": "_posts/2026-11-17-system_server-hprof抓取方法.md"
+    },
+    {
+      "name": "Termux 源码编译 APK 指南",
+      "type": "post",
+      "summary": "从克隆 Termux 源码到编译、安装、签名发布 APK 的完整流程，关键在 JDK 与 Android SDK 环境配置。",
+      "tags": "Termux, APK, 编译",
+      "category": "工具与效率",
+      "date": "2026-11-17",
+      "published": true,
+      "source_file": "_posts/2026-11-17-Termux源码编译APK指南.md"
+    },
+    {
+      "name": "Ubuntu 18.04 升级 GCC",
+      "type": "post",
+      "summary": "通过 ubuntu-toolchain-r PPA 安装 GCC 9，并用 update-alternatives 管理默认版本。",
+      "tags": "Ubuntu, GCC",
+      "category": "工具与效率",
+      "date": "2026-11-17",
+      "published": true,
+      "source_file": "_posts/2026-11-17-Ubuntu18.04升级GCC.md"
+    },
+    {
+      "name": "VSCode 使用汇总",
+      "type": "post",
+      "summary": "Remote-SSH 远程开发、C++ 插件、gitk 的 DISPLAY 报错修复、终端全屏快捷键、护眼主题与 Windows SSHFS 挂载。",
+      "tags": "VSCode, 远程开发, 效率",
+      "category": "工具与效率",
+      "date": "2026-11-17",
+      "published": true,
+      "source_file": "_posts/2026-11-17-VSCode使用汇总.md"
+    },
+    {
+      "name": "愉快地使用 Android 模拟器",
+      "type": "post",
+      "summary": "解决 AS 模拟器无法 remount 的问题（-writable-system），以及在 Android 16 上启动 Automotive 模拟器的方法。",
+      "tags": "模拟器, Android, ADB",
+      "category": "工具与效率",
+      "date": "2026-11-17",
+      "published": true,
+      "source_file": "_posts/2026-11-17-愉快地使用Android模拟器.md"
+    },
+    {
+      "name": "树莓派 Android 14 编译 llama.cpp",
+      "type": "post",
+      "summary": "用 NDK r27 把 llama.cpp 交叉编译到 arm64-v8a（Android 14），并记录 Vulkan 编译可用但运行失败的结论。",
+      "tags": "llama.cpp, NDK, 树莓派",
+      "category": "Android 系统",
+      "date": "2026-11-17",
+      "published": true,
+      "source_file": "_posts/2026-11-17-树莓派Android14编译llama.cpp.md"
+    }
+  ],
+  "edges": [
+    {
+      "source": "CTS 测试框架整理",
+      "target": "分类：测试与认证",
+      "relType": "belongs_to",
+      "strength": "strong"
+    },
+    {
+      "source": "CTS 测试框架整理",
+      "target": "标签：CTS",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "CTS 测试框架整理",
+      "target": "标签：TF",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "Android CTS 指南",
+      "target": "分类：测试与认证",
+      "relType": "belongs_to",
+      "strength": "strong"
+    },
+    {
+      "source": "Android CTS 指南",
+      "target": "标签：CTS",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "Android CTS 指南",
+      "target": "标签：GMS",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "Trade Federation 测试基础架构",
+      "target": "分类：测试与认证",
+      "relType": "belongs_to",
+      "strength": "strong"
+    },
+    {
+      "source": "Trade Federation 测试基础架构",
+      "target": "标签：TF",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "Trade Federation 测试基础架构",
+      "target": "标签：CTS",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "Linux vim plugin",
+      "target": "分类：工具与效率",
+      "relType": "belongs_to",
+      "strength": "strong"
+    },
+    {
+      "source": "Linux vim plugin",
+      "target": "标签：Vim",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "Linux vim plugin",
+      "target": "标签：Linux",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "手动生成 9.0 CDD",
+      "target": "分类：测试与认证",
+      "relType": "belongs_to",
+      "strength": "strong"
+    },
+    {
+      "source": "手动生成 9.0 CDD",
+      "target": "标签：CTS",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "手动生成 9.0 CDD",
+      "target": "标签：CDD",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "GMS 认证问题分析收集",
+      "target": "分类：测试与认证",
+      "relType": "belongs_to",
+      "strength": "strong"
+    },
+    {
+      "source": "GMS 认证问题分析收集",
+      "target": "标签：GMS",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "GMS 认证问题分析收集",
+      "target": "标签：CTS",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "搭建博客随笔",
+      "target": "分类：随笔与学习",
+      "relType": "belongs_to",
+      "strength": "strong"
+    },
+    {
+      "source": "搭建博客随笔",
+      "target": "标签：随笔",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "搭建博客随笔",
+      "target": "标签：Jekyll",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "常见工具使用",
+      "target": "分类：工具与效率",
+      "relType": "belongs_to",
+      "strength": "strong"
+    },
+    {
+      "source": "常见工具使用",
+      "target": "标签：工具",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "常见工具使用",
+      "target": "标签：反编译",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "Bugreport 解析",
+      "target": "分类：工具与效率",
+      "relType": "belongs_to",
+      "strength": "strong"
+    },
+    {
+      "source": "Bugreport 解析",
+      "target": "标签：调试",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "Bugreport 解析",
+      "target": "标签：bugreport",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "多媒体高级编程（一）",
+      "target": "分类：多媒体",
+      "relType": "belongs_to",
+      "strength": "strong"
+    },
+    {
+      "source": "多媒体高级编程（一）",
+      "target": "标签：Camera",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "多媒体高级编程（一）",
+      "target": "标签：多媒体",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "Android Surface 机制",
+      "target": "分类：Android 系统",
+      "relType": "belongs_to",
+      "strength": "strong"
+    },
+    {
+      "source": "Android Surface 机制",
+      "target": "标签：Framework",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "Android Surface 机制",
+      "target": "标签：Surface",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "多媒体学习总结 · Audio",
+      "target": "分类：多媒体",
+      "relType": "belongs_to",
+      "strength": "strong"
+    },
+    {
+      "source": "多媒体学习总结 · Audio",
+      "target": "标签：Audio",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "打造自己的 Vim IDE",
+      "target": "分类：工具与效率",
+      "relType": "belongs_to",
+      "strength": "strong"
+    },
+    {
+      "source": "打造自己的 Vim IDE",
+      "target": "标签：Vim",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "打造自己的 Vim IDE",
+      "target": "标签：Linux",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "Video 学习总结",
+      "target": "分类：多媒体",
+      "relType": "belongs_to",
+      "strength": "strong"
+    },
+    {
+      "source": "Video 学习总结",
+      "target": "标签：Video",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "音频系统",
+      "target": "分类：多媒体",
+      "relType": "belongs_to",
+      "strength": "strong"
+    },
+    {
+      "source": "音频系统",
+      "target": "标签：Audio",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "Yocto 学习",
+      "target": "分类：Android 系统",
+      "relType": "belongs_to",
+      "strength": "strong"
+    },
+    {
+      "source": "Yocto 学习",
+      "target": "标签：Yocto",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "Yocto 学习",
+      "target": "标签：Linux",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "后台 startService 服务 1 分钟自动销毁",
+      "target": "分类：Android 系统",
+      "relType": "belongs_to",
+      "strength": "strong"
+    },
+    {
+      "source": "后台 startService 服务 1 分钟自动销毁",
+      "target": "标签：Framework",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "后台 startService 服务 1 分钟自动销毁",
+      "target": "标签：Service",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "如何判断 Android 设备是否支持 RTSP 协议",
+      "target": "分类：多媒体",
+      "relType": "belongs_to",
+      "strength": "strong"
+    },
+    {
+      "source": "如何判断 Android 设备是否支持 RTSP 协议",
+      "target": "标签：RTSP",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "如何判断 Android 设备是否支持 RTSP 协议",
+      "target": "标签：网络",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "无副 MIC 录像无声解决方案",
+      "target": "分类：多媒体",
+      "relType": "belongs_to",
+      "strength": "strong"
+    },
+    {
+      "source": "无副 MIC 录像无声解决方案",
+      "target": "标签：Audio",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "无副 MIC 录像无声解决方案",
+      "target": "标签：Camera",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "自定义 Native 服务里设置 Android 系统时间",
+      "target": "分类：Android 系统",
+      "relType": "belongs_to",
+      "strength": "strong"
+    },
+    {
+      "source": "自定义 Native 服务里设置 Android 系统时间",
+      "target": "标签：Native",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "自定义 Native 服务里设置 Android 系统时间",
+      "target": "标签：SELinux",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "闭源应用如何替换图标名称等",
+      "target": "分类：Android 系统",
+      "relType": "belongs_to",
+      "strength": "strong"
+    },
+    {
+      "source": "闭源应用如何替换图标名称等",
+      "target": "标签：Overlay",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "闭源应用如何替换图标名称等",
+      "target": "标签：APK",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "Camera API1 无预览配流控制闪光灯",
+      "target": "分类：多媒体",
+      "relType": "belongs_to",
+      "strength": "strong"
+    },
+    {
+      "source": "Camera API1 无预览配流控制闪光灯",
+      "target": "标签：Camera",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "MediaRecorder 工厂测试卡住",
+      "target": "分类：多媒体",
+      "relType": "belongs_to",
+      "strength": "strong"
+    },
+    {
+      "source": "MediaRecorder 工厂测试卡住",
+      "target": "标签：Camera",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "MediaRecorder 工厂测试卡住",
+      "target": "标签：调试",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "车机 BT 音乐与导航音量共存问题",
+      "target": "分类：多媒体",
+      "relType": "belongs_to",
+      "strength": "strong"
+    },
+    {
+      "source": "车机 BT 音乐与导航音量共存问题",
+      "target": "标签：Audio",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "车机 BT 音乐与导航音量共存问题",
+      "target": "标签：Bluetooth",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "CTA 测试不支持录音",
+      "target": "分类：测试与认证",
+      "relType": "belongs_to",
+      "strength": "strong"
+    },
+    {
+      "source": "CTA 测试不支持录音",
+      "target": "标签：CTA",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "CTA 测试不支持录音",
+      "target": "标签：Audio",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "相机录像的码率在哪可设置",
+      "target": "分类：多媒体",
+      "relType": "belongs_to",
+      "strength": "strong"
+    },
+    {
+      "source": "相机录像的码率在哪可设置",
+      "target": "标签：Camera",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "VC 编译 zlib",
+      "target": "分类：工具与效率",
+      "relType": "belongs_to",
+      "strength": "strong"
+    },
+    {
+      "source": "VC 编译 zlib",
+      "target": "标签：Windows",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "VC 编译 zlib",
+      "target": "标签：编译",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "Android 8.1 Reboot 问题定位",
+      "target": "分类：Android 系统",
+      "relType": "belongs_to",
+      "strength": "strong"
+    },
+    {
+      "source": "Android 8.1 Reboot 问题定位",
+      "target": "标签：调试",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "Android 8.1 Reboot 问题定位",
+      "target": "标签：Kernel",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "禁止 AAC 音频",
+      "target": "分类：多媒体",
+      "relType": "belongs_to",
+      "strength": "strong"
+    },
+    {
+      "source": "禁止 AAC 音频",
+      "target": "标签：Audio",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "禁止 AAC 音频",
+      "target": "标签：CTS",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "Android 4.4 蓝牙 MIC 选择问题",
+      "target": "分类：多媒体",
+      "relType": "belongs_to",
+      "strength": "strong"
+    },
+    {
+      "source": "Android 4.4 蓝牙 MIC 选择问题",
+      "target": "标签：Audio",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "Android 4.4 蓝牙 MIC 选择问题",
+      "target": "标签：Bluetooth",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "Audio 常用命令",
+      "target": "分类：多媒体",
+      "relType": "belongs_to",
+      "strength": "strong"
+    },
+    {
+      "source": "Audio 常用命令",
+      "target": "标签：Audio",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "Audio 常用命令",
+      "target": "标签：adb",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "Systrace 使用",
+      "target": "分类：工具与效率",
+      "relType": "belongs_to",
+      "strength": "strong"
+    },
+    {
+      "source": "Systrace 使用",
+      "target": "标签：Systrace",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "Systrace 使用",
+      "target": "标签：性能",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "常用记录",
+      "target": "分类：工具与效率",
+      "relType": "belongs_to",
+      "strength": "strong"
+    },
+    {
+      "source": "常用记录",
+      "target": "标签：正则",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "常用记录",
+      "target": "标签：Vim",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "知识体系梳理",
+      "target": "分类：随笔与学习",
+      "relType": "belongs_to",
+      "strength": "strong"
+    },
+    {
+      "source": "知识体系梳理",
+      "target": "标签：学习",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "JNI 知会",
+      "target": "分类：Android 系统",
+      "relType": "belongs_to",
+      "strength": "strong"
+    },
+    {
+      "source": "JNI 知会",
+      "target": "标签：JNI",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "JNI 知会",
+      "target": "标签：Native",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "内核学习",
+      "target": "分类：Android 系统",
+      "relType": "belongs_to",
+      "strength": "strong"
+    },
+    {
+      "source": "内核学习",
+      "target": "标签：Kernel",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "内核学习",
+      "target": "标签：Linux",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "Android P 新增 system_server 可访问的 HAL 服务：sepolicy 改动",
+      "target": "分类：Android 系统",
+      "relType": "belongs_to",
+      "strength": "strong"
+    },
+    {
+      "source": "Android P 新增 system_server 可访问的 HAL 服务：sepolicy 改动",
+      "target": "标签：SELinux",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "Android P 新增 system_server 可访问的 HAL 服务：sepolicy 改动",
+      "target": "标签：HAL",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "Android P 新增 system_server 可访问的 HAL 服务：sepolicy 改动",
+      "target": "标签：Android P",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "Android 删除文件重启后没有清除：dentry cache 深度分析",
+      "target": "分类：Android 系统",
+      "relType": "belongs_to",
+      "strength": "strong"
+    },
+    {
+      "source": "Android 删除文件重启后没有清除：dentry cache 深度分析",
+      "target": "标签：Kernel",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "Android 删除文件重启后没有清除：dentry cache 深度分析",
+      "target": "标签：sdcardfs",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "Android 删除文件重启后没有清除：dentry cache 深度分析",
+      "target": "标签：调试",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "SSH 窗口保持：screen 用法",
+      "target": "分类：工具与效率",
+      "relType": "belongs_to",
+      "strength": "strong"
+    },
+    {
+      "source": "SSH 窗口保持：screen 用法",
+      "target": "标签：SSH",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "SSH 窗口保持：screen 用法",
+      "target": "标签：screen",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "SSH 窗口保持：screen 用法",
+      "target": "标签：Linux",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "system_server hprof 抓取方法",
+      "target": "分类：Android 系统",
+      "relType": "belongs_to",
+      "strength": "strong"
+    },
+    {
+      "source": "system_server hprof 抓取方法",
+      "target": "标签：调试",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "system_server hprof 抓取方法",
+      "target": "标签：内存",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "system_server hprof 抓取方法",
+      "target": "标签：hprof",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "Termux 源码编译 APK 指南",
+      "target": "分类：工具与效率",
+      "relType": "belongs_to",
+      "strength": "strong"
+    },
+    {
+      "source": "Termux 源码编译 APK 指南",
+      "target": "标签：Termux",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "Termux 源码编译 APK 指南",
+      "target": "标签：APK",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "Termux 源码编译 APK 指南",
+      "target": "标签：编译",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "Ubuntu 18.04 升级 GCC",
+      "target": "分类：工具与效率",
+      "relType": "belongs_to",
+      "strength": "strong"
+    },
+    {
+      "source": "Ubuntu 18.04 升级 GCC",
+      "target": "标签：Ubuntu",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "Ubuntu 18.04 升级 GCC",
+      "target": "标签：GCC",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "VSCode 使用汇总",
+      "target": "分类：工具与效率",
+      "relType": "belongs_to",
+      "strength": "strong"
+    },
+    {
+      "source": "VSCode 使用汇总",
+      "target": "标签：VSCode",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "VSCode 使用汇总",
+      "target": "标签：远程开发",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "VSCode 使用汇总",
+      "target": "标签：效率",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "愉快地使用 Android 模拟器",
+      "target": "分类：工具与效率",
+      "relType": "belongs_to",
+      "strength": "strong"
+    },
+    {
+      "source": "愉快地使用 Android 模拟器",
+      "target": "标签：模拟器",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "愉快地使用 Android 模拟器",
+      "target": "标签：Android",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "愉快地使用 Android 模拟器",
+      "target": "标签：ADB",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "树莓派 Android 14 编译 llama.cpp",
+      "target": "分类：Android 系统",
+      "relType": "belongs_to",
+      "strength": "strong"
+    },
+    {
+      "source": "树莓派 Android 14 编译 llama.cpp",
+      "target": "标签：llama.cpp",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "树莓派 Android 14 编译 llama.cpp",
+      "target": "标签：NDK",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "树莓派 Android 14 编译 llama.cpp",
+      "target": "标签：树莓派",
+      "relType": "tagged",
+      "strength": "medium"
+    },
+    {
+      "source": "CTS 测试框架整理",
+      "target": "Trade Federation 测试基础架构",
+      "relType": "relates_to",
+      "strength": "weak",
+      "description": "共享标签：CTS, TF"
+    },
+    {
+      "source": "Android CTS 指南",
+      "target": "GMS 认证问题分析收集",
+      "relType": "relates_to",
+      "strength": "weak",
+      "description": "共享标签：CTS, GMS"
+    },
+    {
+      "source": "Linux vim plugin",
+      "target": "打造自己的 Vim IDE",
+      "relType": "relates_to",
+      "strength": "weak",
+      "description": "共享标签：Linux, Vim"
+    },
+    {
+      "source": "多媒体学习总结 · Audio",
+      "target": "音频系统",
+      "relType": "relates_to",
+      "strength": "strong",
+      "description": "正文互相引用"
+    },
+    {
+      "source": "车机 BT 音乐与导航音量共存问题",
+      "target": "Android 4.4 蓝牙 MIC 选择问题",
+      "relType": "relates_to",
+      "strength": "weak",
+      "description": "共享标签：Audio, Bluetooth"
+    },
+    {
+      "source": "Android 8.1 Reboot 问题定位",
+      "target": "Android 删除文件重启后没有清除：dentry cache 深度分析",
+      "relType": "relates_to",
+      "strength": "weak",
+      "description": "共享标签：Kernel, 调试"
+    }
+  ],
+  "metadata": {
+    "source": "Hursion_Blog/_posts",
+    "exported_at": "2026-11-18",
+    "post_count": 48,
+    "category_count": 5,
+    "tag_count": 56
+  }
+}

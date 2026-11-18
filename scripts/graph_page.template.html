@@ -1,0 +1,344 @@
+---
+layout: default
+title: 知识图谱
+permalink: /knowledge-graph/
+---
+<style>
+  .kg-wrap { position: relative; height: calc(100vh - var(--nav-h)); min-height: 520px; margin: 0 calc(50% - 50vw); background: var(--paper); overflow: hidden; }
+  .kg-wrap svg { width: 100%; height: 100%; display: block; }
+  .kg-panel {
+    position: absolute; background: var(--surface); border: 1px solid var(--line);
+    border-radius: var(--radius); box-shadow: var(--shadow-sm); z-index: 10;
+  }
+  .kg-controls { top: 16px; left: 16px; padding: 14px 16px; min-width: 230px; }
+  .kg-controls h3 { margin: 0 0 10px; font-family: var(--serif); font-size: 16px; color: var(--ink); }
+  .kg-search {
+    width: 100%; padding: 7px 12px; border: 1px solid var(--line); border-radius: 8px;
+    background: var(--surface-2); color: var(--ink); font-size: 13px; outline: none; margin-bottom: 10px;
+  }
+  .kg-search:focus { border-color: var(--accent); }
+  .kg-filter label { display: flex; align-items: center; gap: 8px; font-size: 12.5px; color: var(--ink-soft); cursor: pointer; padding: 3px 0; }
+  .kg-filter label:hover { color: var(--ink); }
+  .kg-filter input { accent-color: var(--accent); }
+  .kg-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; flex: none; }
+  .kg-hint { margin-top: 10px; font-size: 11px; color: var(--ink-soft); line-height: 1.6; border-top: 1px dashed var(--line); padding-top: 8px; }
+  .kg-stats { bottom: 16px; left: 16px; padding: 8px 16px; font-size: 12px; color: var(--ink-soft); display: flex; gap: 16px; }
+  .kg-stats b { color: var(--ink); font-weight: 600; }
+  .kg-detail { top: 16px; right: 16px; width: 320px; max-width: calc(100vw - 32px); max-height: calc(100% - 32px); overflow-y: auto; padding: 18px 20px; display: none; }
+  .kg-detail.active { display: block; }
+  .kg-detail h3 { margin: 0 0 8px; font-family: var(--serif); font-size: 17px; color: var(--ink); padding-right: 24px; }
+  .kg-badge { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 11px; font-weight: 600; margin-bottom: 12px; }
+  .kg-field { margin-bottom: 10px; }
+  .kg-field-label { font-size: 11px; color: var(--ink-soft); letter-spacing: 0.5px; margin-bottom: 2px; }
+  .kg-field-value { font-size: 13px; color: var(--ink); line-height: 1.6; word-break: break-all; }
+  .kg-read { display: inline-block; margin: 4px 0 8px; padding: 6px 14px; border-radius: 8px; background: var(--accent); color: #fff !important; font-size: 13px; }
+  .kg-read:hover { background: var(--accent-strong); color: #fff !important; }
+  .kg-conns { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--line); }
+  .kg-conn { padding: 5px 0; font-size: 12.5px; color: var(--ink-soft); cursor: pointer; }
+  .kg-conn:hover { color: var(--accent); }
+  .kg-close { position: absolute; top: 10px; right: 12px; background: none; border: none; color: var(--ink-soft); cursor: pointer; font-size: 18px; }
+  .kg-close:hover { color: var(--ink); }
+  .kg-tooltip {
+    position: absolute; background: var(--surface); border: 1px solid var(--line); border-radius: 8px;
+    padding: 8px 12px; font-size: 12px; pointer-events: none; opacity: 0; transition: opacity 0.15s;
+    z-index: 20; max-width: 260px; box-shadow: var(--shadow-sm); color: var(--ink);
+  }
+  .kg-tooltip.visible { opacity: 1; }
+  .kg-fallback { padding: 60px 24px; text-align: center; color: var(--ink-soft); }
+  @media (max-width: 720px) {
+    .kg-controls { min-width: 180px; padding: 10px 12px; }
+    .kg-detail { width: calc(100vw - 32px); }
+    .kg-hint { display: none; }
+  }
+</style>
+
+<div class="kg-wrap" id="kgWrap">
+  <svg id="kgGraph" role="img" aria-label="博客知识图谱力导向图"></svg>
+
+  <div class="kg-panel kg-controls">
+    <h3>知识图谱</h3>
+    <input type="text" class="kg-search" id="kgSearch" placeholder="搜索文章 / 标签 / 分类…">
+    <div class="kg-filter" id="kgFilter"></div>
+    <div class="kg-hint">滚轮缩放 · 拖拽节点 · 悬停高亮关联<br>点击节点查看详情与文章入口</div>
+  </div>
+
+  <div class="kg-panel kg-stats" id="kgStats"></div>
+
+  <div class="kg-panel kg-detail" id="kgDetail">
+    <button class="kg-close" onclick="kgCloseDetail()" aria-label="关闭详情">&times;</button>
+    <div id="kgDetailContent"></div>
+  </div>
+
+  <div class="kg-tooltip" id="kgTooltip"></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script>
+{% comment %}KG-DATA-BEGIN{% endcomment %}
+{% assign kg_nodes = "" | split: "" %}
+{% assign kg_edges = "" | split: "" %}
+{% for cat in site.data.categories %}
+  {% capture cat_name %}分类：{{ cat.name }}{% endcapture %}
+  {% capture n %}{"name":{{ cat_name | jsonify }},"type":"topic","summary":{{ cat.desc | jsonify }}}{% endcapture %}
+  {% assign kg_nodes = kg_nodes | push: n %}
+{% endfor %}
+{% for tag in site.tags %}
+  {% capture tag_name %}标签：{{ tag[0] }}{% endcapture %}
+  {% capture n %}{"name":{{ tag_name | jsonify }},"type":"concept","summary":"共 {{ tag[1].size }} 篇文章","source_count":{{ tag[1].size }}}{% endcapture %}
+  {% assign kg_nodes = kg_nodes | push: n %}
+{% endfor %}
+{% for post in site.posts %}
+  {% assign summary = post.excerpt | default: post.content | strip_markdown | strip_newlines | strip | truncate: 120 %}
+  {% capture n %}{"name":{{ post.title | jsonify }},"type":"post","summary":{{ summary | jsonify }},"tags":{{ post.tags | join: ", " | jsonify }},"category":{{ post.category | default: "" | jsonify }},"date":"{{ post.date | date: '%Y-%m-%d' }}","published":{% if post.published == false %}false{% else %}true{% endif %},"url":"{{ site.baseurl }}{{ post.url }}","source_file":"_posts/{{ post.path | split: '/' | last }}"}{% endcapture %}
+  {% assign kg_nodes = kg_nodes | push: n %}
+  {% if post.category and post.category != "" %}
+    {% capture cat_target %}分类：{{ post.category }}{% endcapture %}
+    {% capture e %}{"source":{{ post.title | jsonify }},"target":{{ cat_target | jsonify }},"relType":"belongs_to","strength":"strong"}{% endcapture %}
+    {% assign kg_edges = kg_edges | push: e %}
+  {% endif %}
+  {% for tag in post.tags %}
+    {% capture tag_target %}标签：{{ tag }}{% endcapture %}
+    {% capture e %}{"source":{{ post.title | jsonify }},"target":{{ tag_target | jsonify }},"relType":"tagged","strength":"medium"}{% endcapture %}
+    {% assign kg_edges = kg_edges | push: e %}
+  {% endfor %}
+{% endfor %}
+{% for a in site.posts %}
+  {% for b in site.posts %}
+    {% if a.url < b.url %}
+      {% if b.content contains a.title or a.content contains b.title %}
+        {% capture e %}{"source":{{ a.title | jsonify }},"target":{{ b.title | jsonify }},"relType":"relates_to","strength":"strong","description":"正文互相引用"}{% endcapture %}
+        {% assign kg_edges = kg_edges | push: e %}
+      {% else %}
+        {% assign shared = "" | split: "" %}
+        {% for t in a.tags %}{% if b.tags contains t %}{% assign shared = shared | push: t %}{% endif %}{% endfor %}
+        {% if shared.size >= 2 %}
+          {% capture e %}{"source":{{ a.title | jsonify }},"target":{{ b.title | jsonify }},"relType":"relates_to","strength":"weak","description":{{ shared | join: ", " | prepend: "共享标签：" | jsonify }}}{% endcapture %}
+          {% assign kg_edges = kg_edges | push: e %}
+        {% endif %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+window.__KG_DATA__ = {
+  "nodes": [{% for n in kg_nodes %}{{ n }}{% unless forloop.last %},{% endunless %}{% endfor %}],
+  "edges": [{% for e in kg_edges %}{{ e }}{% unless forloop.last %},{% endunless %}{% endfor %}],
+  "metadata": {"source":"Hursion_Blog/_posts","exported_at":"{{ site.time | date: '%Y-%m-%d' }}","post_count":{{ site.posts.size }},"category_count":{{ site.data.categories.size }},"tag_count":{{ site.tags.size }}}
+};
+{% comment %}KG-DATA-END{% endcomment %}
+</script>
+<script>
+(function () {
+  const DATA = window.__KG_DATA__ || { nodes: [], edges: [], metadata: {} };
+  const wrap = document.getElementById('kgWrap');
+  if (!window.d3) {
+    wrap.innerHTML = '<div class="kg-fallback">D3.js 加载失败（CDN 不可达）。图谱数据仍可在 <code>assets/data/knowledge-graph.json</code> 查看，或用 Obsidian 打开本仓库查看图谱。</div>';
+    return;
+  }
+
+  const CAT_COLORS = {
+    'Android 系统': '#2e7d5b',
+    '多媒体': '#7c5cbf',
+    '测试与认证': '#2f6f9f',
+    '工具与效率': '#a8752a',
+    '随笔与学习': '#b8432f'
+  };
+  const TYPE_COLORS = { post: '#2f6f9f', topic: '#b8432f', concept: '#2e7d5b' };
+  const TYPE_LABELS = { post: '文章', topic: '分类', concept: '标签' };
+  const REL_LABELS = { belongs_to: '归属', tagged: '标签', relates_to: '相关' };
+  const nodeColor = d => d.type === 'post' ? (CAT_COLORS[d.category] || TYPE_COLORS.post) : TYPE_COLORS[d.type];
+
+  const css = getComputedStyle(document.documentElement);
+  const inkSoft = () => getComputedStyle(document.documentElement).getPropertyValue('--ink-soft').trim() || '#6b675e';
+  const lineColor = () => getComputedStyle(document.documentElement).getPropertyValue('--line').trim() || '#e3ddcd';
+  const inkColor = () => getComputedStyle(document.documentElement).getPropertyValue('--ink').trim() || '#23262b';
+  const accentColor = () => getComputedStyle(document.documentElement).getPropertyValue('--accent').trim() || '#b8432f';
+
+  // 筛选器：文章按分类着色列出，另加分类/标签两个类型开关
+  const filterBox = document.getElementById('kgFilter');
+  const activeFilters = new Set(['post', 'topic', 'concept']);
+  const activeCats = new Set(Object.keys(CAT_COLORS));
+  function addFilter(label, color, checked, onChange) {
+    const el = document.createElement('label');
+    el.innerHTML = '<input type="checkbox"' + (checked ? ' checked' : '') + '> <span class="kg-dot" style="background:' + color + '"></span> ' + label;
+    el.querySelector('input').addEventListener('change', e => onChange(e.target.checked));
+    filterBox.appendChild(el);
+  }
+  Object.entries(CAT_COLORS).forEach(([cat, color]) => {
+    const n = DATA.nodes.filter(x => x.type === 'post' && x.category === cat).length;
+    addFilter(cat + '（' + n + '）', color, true, on => { on ? activeCats.add(cat) : activeCats.delete(cat); updateVisibility(); });
+  });
+  addFilter('分类节点', TYPE_COLORS.topic, true, on => { on ? activeFilters.add('topic') : activeFilters.delete('topic'); updateVisibility(); });
+  addFilter('标签节点', TYPE_COLORS.concept, true, on => { on ? activeFilters.add('concept') : activeFilters.delete('concept'); updateVisibility(); });
+
+  document.getElementById('kgStats').innerHTML =
+    '节点 <b>' + DATA.nodes.length + '</b> 关系 <b>' + DATA.edges.length + '</b> 文章 <b>' + (DATA.metadata.post_count || '-') + '</b> 更新 <b>' + (DATA.metadata.exported_at || '-') + '</b>';
+
+  const svg = d3.select('#kgGraph');
+  const width = wrap.clientWidth, height = wrap.clientHeight;
+  svg.attr('viewBox', '0 0 ' + width + ' ' + height);
+  const g = svg.append('g');
+  const zoom = d3.zoom().scaleExtent([0.15, 5]).on('zoom', ev => g.attr('transform', ev.transform));
+  svg.call(zoom);
+
+  const defs = svg.append('defs');
+  Object.entries(TYPE_COLORS).forEach(([type, color]) => {
+    defs.append('marker').attr('id', 'kg-arrow-' + type)
+      .attr('viewBox', '0 -5 10 10').attr('refX', 22).attr('refY', 0)
+      .attr('markerWidth', 5).attr('markerHeight', 5).attr('orient', 'auto')
+      .append('path').attr('d', 'M0,-5L10,0L0,5').attr('fill', color);
+  });
+
+  const nodeMap = {};
+  DATA.nodes.forEach((n, i) => { n.id = i; nodeMap[n.name] = i; });
+  const links = DATA.edges.map(e => ({
+    source: nodeMap[e.source], target: nodeMap[e.target],
+    relType: e.relType || '', description: e.description || '', strength: e.strength || 'medium'
+  })).filter(l => typeof l.source === 'number' && typeof l.target === 'number');
+
+  const degree = {};
+  links.forEach(l => { degree[l.source] = (degree[l.source] || 0) + 1; degree[l.target] = (degree[l.target] || 0) + 1; });
+  const radius = d => Math.max(7, Math.min(22, 7 + (degree[d.id] || 0) * 1.6));
+
+  const simulation = d3.forceSimulation(DATA.nodes)
+    .force('link', d3.forceLink(links).id(d => d.id).distance(l => l.relType === 'relates_to' ? 160 : 100))
+    .force('charge', d3.forceManyBody().strength(-260))
+    .force('center', d3.forceCenter(width / 2, height / 2))
+    .force('collision', d3.forceCollide().radius(d => radius(d) + 12));
+
+  const link = g.append('g').selectAll('line').data(links).enter().append('line')
+    .attr('stroke', lineColor())
+    .attr('stroke-width', d => d.strength === 'strong' ? 2.2 : d.strength === 'weak' ? 1 : 1.4)
+    .attr('stroke-dasharray', d => d.strength === 'weak' ? '4 3' : null)
+    .attr('stroke-opacity', 0.7)
+    .attr('marker-end', d => 'url(#kg-arrow-' + ((typeof d.target === 'object' ? d.target.type : DATA.nodes[d.target].type) || 'post') + ')');
+
+  const linkLabel = g.append('g').selectAll('text').data(links).enter().append('text')
+    .attr('font-size', 9).attr('fill', 'transparent').attr('text-anchor', 'middle').attr('dy', -4)
+    .text(d => REL_LABELS[d.relType] || d.relType);
+
+  const node = g.append('g').selectAll('g').data(DATA.nodes).enter().append('g')
+    .call(d3.drag()
+      .on('start', (ev, d) => { if (!ev.active) simulation.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; })
+      .on('drag', (ev, d) => { d.fx = ev.x; d.fy = ev.y; })
+      .on('end', (ev, d) => { if (!ev.active) simulation.alphaTarget(0); d.fx = null; d.fy = null; }));
+
+  node.append('circle')
+    .attr('r', radius)
+    .attr('fill', nodeColor)
+    .attr('stroke', d => d.type === 'post' && d.published === false ? accentColor() : 'none')
+    .attr('stroke-width', 2)
+    .attr('stroke-dasharray', d => d.type === 'post' && d.published === false ? '3 2' : null)
+    .style('cursor', 'pointer');
+
+  node.append('text')
+    .attr('dy', d => radius(d) + 13)
+    .attr('text-anchor', 'middle')
+    .attr('font-size', d => d.type === 'post' ? 11 : 12)
+    .attr('font-weight', d => d.type === 'post' ? 500 : 700)
+    .attr('fill', inkColor())
+    .style('pointer-events', 'none')
+    .text(d => d.name.length > 14 ? d.name.slice(0, 14) + '…' : d.name);
+
+  const tooltip = document.getElementById('kgTooltip');
+  const connected = (a, b) => links.some(l =>
+    (l.source.id === a && l.target.id === b) || (l.target.id === a && l.source.id === b));
+
+  node.on('mouseover', (ev, d) => {
+    tooltip.innerHTML = '<strong>' + d.name + '</strong><br><span style="color:' + nodeColor(d) + '">' +
+      (TYPE_LABELS[d.type] || d.type) + (d.type === 'post' && d.published === false ? ' · 草稿' : '') +
+      '</span><br><span style="color:' + inkSoft() + '">' + (d.summary || '').slice(0, 90) + ((d.summary || '').length > 90 ? '…' : '') + '</span>';
+    tooltip.classList.add('visible');
+    link.attr('stroke', l => (l.source.id === d.id || l.target.id === d.id) ? accentColor() : lineColor())
+        .attr('stroke-opacity', l => (l.source.id === d.id || l.target.id === d.id) ? 1 : 0.12);
+    linkLabel.attr('fill', l => (l.source.id === d.id || l.target.id === d.id) ? inkSoft() : 'transparent');
+    node.attr('opacity', n => n.id === d.id || connected(d.id, n.id) ? 1 : 0.18);
+  })
+  .on('mousemove', ev => {
+    const r = wrap.getBoundingClientRect();
+    tooltip.style.left = Math.min(ev.clientX - r.left + 12, r.width - 270) + 'px';
+    tooltip.style.top = (ev.clientY - r.top - 10) + 'px';
+  })
+  .on('mouseout', () => {
+    tooltip.classList.remove('visible');
+    link.attr('stroke', lineColor()).attr('stroke-opacity', 0.7);
+    linkLabel.attr('fill', 'transparent');
+    node.attr('opacity', 1);
+    updateVisibility();
+  })
+  .on('click', (ev, d) => { ev.stopPropagation(); kgShowDetail(d); });
+
+  svg.on('click', kgCloseDetail);
+
+  function kgShowDetail(d) {
+    const conns = links.filter(l => l.source.id === d.id || l.target.id === d.id);
+    const connHtml = conns.map(l => {
+      const other = DATA.nodes[l.source.id === d.id ? l.target.id : l.source.id];
+      const dir = l.source.id === d.id ? '→' : '←';
+      const desc = l.description ? ' · ' + l.description : '';
+      return '<div class="kg-conn" onclick="kgShowDetail(DATA.nodes[' + other.id + '])">' +
+        dir + ' <strong>' + other.name + '</strong> <span style="color:' + inkSoft() + '">(' +
+        (REL_LABELS[l.relType] || l.relType) + desc + ')</span></div>';
+    }).join('');
+    let action = '';
+    if (d.type === 'post' && d.url) {
+      action = '<a class="kg-read" href="' + d.url + '">阅读文章 →</a>';
+    } else if (d.type === 'topic') {
+      const slug = { 'Android 系统': 'android', '多媒体': 'media', '测试与认证': 'testing', '工具与效率': 'tools', '随笔与学习': 'notes' }[d.name.replace(/^分类：/, '')];
+      if (slug) action = '<a class="kg-read" href="/Hursion_Blog/categories/#' + slug + '">查看分类文章 →</a>';
+    } else if (d.type === 'concept') {
+      action = '<a class="kg-read" href="/Hursion_Blog/tags/#' + encodeURIComponent(d.name.replace(/^标签：/, '')) + '">查看标签文章 →</a>';
+    }
+    document.getElementById('kgDetailContent').innerHTML =
+      '<h3>' + d.name + '</h3>' +
+      '<span class="kg-badge" style="background:' + nodeColor(d) + '22;color:' + nodeColor(d) + '">' +
+        (TYPE_LABELS[d.type] || d.type) + (d.type === 'post' && d.published === false ? ' · 未发布草稿' : '') + '</span>' +
+      action +
+      (d.summary ? '<div class="kg-field"><div class="kg-field-label">摘要</div><div class="kg-field-value">' + d.summary + '</div></div>' : '') +
+      (d.tags ? '<div class="kg-field"><div class="kg-field-label">标签</div><div class="kg-field-value">' + d.tags + '</div></div>' : '') +
+      (d.date ? '<div class="kg-field"><div class="kg-field-label">发布日期</div><div class="kg-field-value">' + d.date + '</div></div>' : '') +
+      (d.source_file ? '<div class="kg-field"><div class="kg-field-label">Obsidian 源文件</div><div class="kg-field-value">' + d.source_file + '</div></div>' : '') +
+      '<div class="kg-conns"><div class="kg-field-label">关联（' + conns.length + '）</div>' +
+      (connHtml || '<div style="color:' + inkSoft() + ';font-size:12px;padding:6px 0">暂无关联</div>') + '</div>';
+    document.getElementById('kgDetail').classList.add('active');
+  }
+  function kgCloseDetail() { document.getElementById('kgDetail').classList.remove('active'); }
+  window.kgShowDetail = kgShowDetail;
+  window.kgCloseDetail = kgCloseDetail;
+  window.DATA = DATA;
+
+  document.getElementById('kgSearch').addEventListener('input', () => updateVisibility());
+  function nodeVisible(d) {
+    const q = document.getElementById('kgSearch').value.toLowerCase();
+    const typeOn = d.type === 'post' ? (!d.category || activeCats.has(d.category)) : activeFilters.has(d.type);
+    const searchOn = !q || d.name.toLowerCase().includes(q) || (d.summary || '').toLowerCase().includes(q) || (d.tags || '').toLowerCase().includes(q);
+    return typeOn && searchOn;
+  }
+  function updateVisibility() {
+    node.attr('opacity', d => nodeVisible(d) ? 1 : 0.07);
+    link.attr('opacity', l => nodeVisible(DATA.nodes[l.source.id]) && nodeVisible(DATA.nodes[l.target.id]) ? 0.7 : 0.04);
+    linkLabel.attr('opacity', l => nodeVisible(DATA.nodes[l.source.id]) && nodeVisible(DATA.nodes[l.target.id]) ? 1 : 0);
+  }
+
+  simulation.on('tick', () => {
+    link.attr('x1', d => d.source.x).attr('y1', d => d.source.y)
+        .attr('x2', d => d.target.x).attr('y2', d => d.target.y);
+    linkLabel.attr('x', d => (d.source.x + d.target.x) / 2).attr('y', d => (d.source.y + d.target.y) / 2);
+    node.attr('transform', d => 'translate(' + d.x + ',' + d.y + ')');
+  });
+
+  setTimeout(() => {
+    const b = g.node().getBBox();
+    if (!b.width || !b.height) return;
+    const scale = Math.min(2, 0.85 / Math.max(b.width / width, b.height / height));
+    const tx = width / 2 - scale * (b.x + b.width / 2);
+    const ty = height / 2 - scale * (b.y + b.height / 2);
+    svg.transition().duration(750).call(zoom.transform, d3.zoomIdentity.translate(tx, ty).scale(scale));
+  }, 2200);
+
+  // 主题切换时刷新颜色
+  new MutationObserver(() => {
+    node.select('text').attr('fill', inkColor());
+    link.attr('stroke', lineColor());
+  }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+})();
+</script>
